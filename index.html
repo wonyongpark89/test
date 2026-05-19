@@ -9,13 +9,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    .site-notice {
+      background: #fff4d6;
+      border-bottom: 1px solid rgba(91, 61, 0, 0.18);
+      color: #4a3300;
+      font-size: 0.95rem;
+    }
+
+    .site-notice .container {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .site-notice strong {
+      color: #2f2100;
+    }
+  </style>
 </head>
 <body class="page-home">
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="" aria-label="The Grenfell Curriculum home">
       <span class="brand-title">The Grenfell Curriculum</span>
-        <span class="brand-tagline">Memory, justice and education after Grenfell</span>
+      <span class="brand-tagline">Memory, justice and education after Grenfell</span>
     </a>
     <button class="nav-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" data-nav-toggle>
       <span>Menu</span><span aria-hidden="true"></span>
@@ -25,6 +42,13 @@
     </nav>
   </div>
 </header>
+
+  <div class="site-notice" role="status" aria-live="polite">
+    <div class="container">
+      <strong>Notice:</strong> The Teacher CPD is temporarily unavailable because the Canvas platform is currently down due to a cyberattack.
+    </div>
+  </div>
+
   <main id="main">
 
     <section class="page-hero">
@@ -36,7 +60,6 @@
           <div class="actions">
             <a class="btn primary" href="https://canvas.instructure.com/courses/13952145/modules" target="_blank" rel="noopener noreferrer">Access the teacher CPD</a>
             <a class="btn secondary" href="resources/">Browse resources</a>
-          </div>
           </div>
         </div>
       </div>
