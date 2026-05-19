@@ -47,22 +47,20 @@
         </div>
         <form class="resource-toolbar" aria-label="Resource filters">
           <div class="field"><label for="resource-search">Search</label><input id="resource-search" type="search" placeholder="Search by title, tag or keyword" data-resource-search></div>
-          <div class="field"><label for="subject-filter">Subject</label><select id="subject-filter" data-resource-filter="subject"><option value="">All subjects</option><option>History</option><option>Citizenship</option><option>English</option><option>PSHE</option><option>Geography</option><option>Religious Education</option><option>Drama</option><option>Design and Technology</option><option>Science</option><option>Media literacy</option></select></div>
-          <div class="field"><label for="stage-filter">Key stage</label><select id="stage-filter" data-resource-filter="stage"><option value="">All stages</option><option>Primary</option><option>Secondary</option><option>Further education</option><option>Key Stage 2</option><option>Key Stage 3</option><option>Key Stage 4</option><option>Key Stage 5</option></select></div>
-          <div class="field"><label for="type-filter">Type</label><select id="type-filter" data-resource-filter="type"><option value="">All types</option><option>Lesson resource pack</option><option>Teacher guide</option><option>Lesson material</option><option>Policy brief</option><option>Report</option><option>CPD course</option><option>Teacher planning tool</option><option>Case study</option><option>Parliamentary briefing</option></select></div>
-          <div class="field"><label for="theme-filter">Theme</label><select id="theme-filter" data-resource-filter="theme"><option value="">All themes</option><option>Classroom discussion</option><option>Curriculum planning</option><option>Memorialisation</option><option>Justice</option><option>Community</option><option>Housing</option><option>Disaster education</option><option>Engineering ethics</option><option>Fire safety</option><option>Media literacy</option><option>Institutional accountability</option><option>Trauma-informed practice</option></select></div>
-          <div class="field"><label for="format-filter">Format</label><select id="format-filter" data-resource-filter="format"><option value="">All formats</option><option>PDF</option><option>ZIP</option><option>Slides</option><option>Worksheet</option><option>Web course</option><option>Template</option><option>Webpage</option></select></div>
+          <div class="field"><label for="subject-filter">Subject</label><select id="subject-filter" data-resource-filter="subject"><option value="">All subjects</option></select></div>
+          <div class="field"><label for="stage-filter">Key stage</label><select id="stage-filter" data-resource-filter="stage"><option value="">All stages</option></select></div>
+          <div class="field"><label for="type-filter">Type</label><select id="type-filter" data-resource-filter="type"><option value="">All types</option></select></div>
+          <div class="field"><label for="theme-filter">Theme</label><select id="theme-filter" data-resource-filter="theme"><option value="">All themes</option></select></div>
         </form>
         <div class="actions" style="margin-top:0;"><button class="btn secondary" type="button" data-resource-reset>Reset filters</button></div>
         <p class="resource-count" aria-live="polite" data-resource-count></p>
         <div class="grid three resource-grid" data-resource-list>
           <!-- Add future lesson packs as new resource-card articles using the same folder pattern in assets/resources/lesson-packs/. -->
-          <article class="card resource-card" data-resource-card data-subject="Design and Technology,Science,Citizenship" data-stage="Secondary,Key Stage 4" data-type="Lesson resource pack" data-theme="Engineering ethics,Fire safety,Justice,Institutional accountability,Disaster education" data-format="PDF,ZIP,Slides,Worksheet" data-search="Engineering Ethics When Buildings Fail KS4 Design and Technology science citizenship engineering ethics Grenfell Tower Wang Fuk Court cladding flammability chimney effect compartmentation facade duty of care systemic failure cost-cutting regulatory failure lesson resource pack scheme of work slides student activity sheet worksheet">
+          <article class="card resource-card" data-resource-card data-subject="Design and Technology,Science,Citizenship" data-stage="Secondary,Key Stage 4" data-type="Lesson resource pack" data-theme="Engineering ethics,Fire safety,Justice,Institutional accountability,Disaster education" data-search="Engineering Ethics When Buildings Fail KS4 Design and Technology science citizenship engineering ethics Grenfell Tower Wang Fuk Court cladding flammability chimney effect compartmentation facade duty of care systemic failure cost-cutting regulatory failure lesson resource pack scheme of work slides student activity sheet worksheet">
             <p class="resource-kicker">Lesson resource pack</p>
             <h3>Engineering Ethics: When Buildings Fail</h3>
             <p>A KS4 Design &amp; Technology lesson pack exploring material choices, fire spread, cost-cutting, ignored warnings and ethical responsibilities through comparative case studies of Grenfell Tower and Wang Fuk Court.</p>
-            <p class="resource-note">Contains the scheme of work, presentation slides and student activity sheet.</p>
-            <div class="resource-meta"><span>Lesson resource pack</span><span>Key Stage 4</span><span>Design &amp; Technology</span><span>Engineering ethics</span><span>50 minutes</span><span>PDF + ZIP</span></div>
+            <div class="resource-meta"><span>Lesson resource pack</span><span>Key Stage 4</span><span>Design &amp; Technology</span><span>Engineering ethics</span><span>Fire safety</span></div>
             <div class="resource-actions">
               <a class="btn primary" href="../assets/resources/lesson-packs/engineering-ethics-when-buildings-fail/engineering-ethics-when-buildings-fail-pack.zip" download>Download full pack</a>
             </div>
@@ -75,11 +73,25 @@
               </ul>
             </details>
           </article>
-          <article class="card resource-card" data-resource-card data-subject="History,Citizenship,English,PSHE,Geography,Religious Education,Drama,Design and Technology,Science,Media literacy" data-stage="Primary,Secondary,Further education,Key Stage 2,Key Stage 3,Key Stage 4,Key Stage 5" data-type="CPD course" data-theme="Disaster education,Justice,Trauma-informed practice,Curriculum planning" data-format="Web course" data-search="Teaching about Grenfell Education and Social Justice after Disasters CPD course teacher education Education for Disaster Justice CARE-LEAD">
+          <article class="card resource-card" data-resource-card data-subject="English" data-stage="Secondary,Key Stage 3" data-type="Lesson resource pack" data-theme="" data-search="The Grenfell Tower Tragedy Analysing persuasive writing on an emotional subject KS3 English lesson resource pack coming soon">
+            <p class="resource-kicker">Coming soon</p>
+            <h3>The Grenfell Tower Tragedy: Analysing persuasive writing on an emotional subject</h3>
+            <p>A KS3 English lesson resource pack. Downloads will be added when the pack is ready.</p>
+            <div class="resource-meta"><span>Lesson resource pack</span><span>Key Stage 3</span><span>English</span></div>
+            <span class="btn secondary disabled" aria-disabled="true">Coming soon</span>
+          </article>
+          <article class="card resource-card" data-resource-card data-subject="PSHE" data-stage="Secondary,Key Stage 3" data-type="Lesson resource pack" data-theme="" data-search="Remembering Grenfell KS3 PSHE lesson resource pack coming soon">
+            <p class="resource-kicker">Coming soon</p>
+            <h3>Remembering Grenfell</h3>
+            <p>A KS3 PSHE lesson resource pack. Downloads will be added when the pack is ready.</p>
+            <div class="resource-meta"><span>Lesson resource pack</span><span>Key Stage 3</span><span>PSHE</span></div>
+            <span class="btn secondary disabled" aria-disabled="true">Coming soon</span>
+          </article>
+          <article class="card resource-card" data-resource-card data-subject="History,Citizenship,English,PSHE,Geography,Religious Education,Drama,Design and Technology,Science,Media literacy" data-stage="Primary,Secondary,Further education,Key Stage 2,Key Stage 3,Key Stage 4,Key Stage 5" data-type="CPD course" data-theme="Disaster education,Justice,Trauma-informed practice,Curriculum planning" data-search="Teaching about Grenfell Education and Social Justice after Disasters CPD course teacher education Education for Disaster Justice CARE-LEAD">
             <p class="resource-kicker">Online CPD</p>
             <h3>Teaching about Grenfell: Education and Social Justice after Disasters</h3>
             <p>A free online professional development course supporting educators to teach about Grenfell with care, accuracy and a commitment to justice.</p>
-            <div class="resource-meta"><span>CPD</span><span>Teacher education</span><span>Education for Disaster Justice</span><span>CARE-LEAD</span><span>Web course</span></div>
+            <div class="resource-meta"><span>CPD</span><span>Teacher education</span><span>Education for Disaster Justice</span><span>CARE-LEAD</span></div>
             <a class="btn secondary" href="https://canvas.instructure.com/courses/13952145/modules" target="_blank" rel="noopener noreferrer">Access the CPD on Canvas</a>
           </article>
         </div>

@@ -112,9 +112,44 @@
     return String(value || '').trim().toLowerCase();
   }
 
+  function splitValues(value) {
+    return String(value || '')
+      .split(',')
+      .map((item) => item.trim())
+      .filter(Boolean);
+  }
+
   function valueInList(needle, haystack) {
     if (!needle) return true;
-    return normalise(haystack).split(',').map((item) => item.trim()).includes(normalise(needle));
+    return splitValues(haystack).some((item) => normalise(item) === normalise(needle));
+  }
+
+  function populateFilterOptions() {
+    filters.forEach((filter) => {
+      const key = filter.dataset.resourceFilter;
+      const currentValue = filter.value;
+      const defaultOption = filter.querySelector('option[value=""]');
+      const defaultText = defaultOption ? defaultOption.textContent : 'All';
+
+      const values = Array.from(new Set(cards.flatMap((card) => splitValues(card.dataset[key]))))
+        .sort((a, b) => a.localeCompare(b, 'en-GB', { sensitivity: 'base' }));
+
+      filter.innerHTML = '';
+
+      const allOption = document.createElement('option');
+      allOption.value = '';
+      allOption.textContent = defaultText;
+      filter.appendChild(allOption);
+
+      values.forEach((value) => {
+        const option = document.createElement('option');
+        option.value = value;
+        option.textContent = value;
+        filter.appendChild(option);
+      });
+
+      if (values.includes(currentValue)) filter.value = currentValue;
+    });
   }
 
   function filterCards() {
@@ -140,6 +175,8 @@
       count.textContent = `${visibleCount} ${noun} shown`;
     }
   }
+
+  populateFilterOptions();
 
   if (searchInput) searchInput.addEventListener('input', filterCards);
   filters.forEach((filter) => filter.addEventListener('change', filterCards));
