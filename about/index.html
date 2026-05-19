@@ -9,13 +9,48 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../assets/css/styles.css">
+  <style>
+    .site-notice {
+      background: #fff4d6;
+      border-bottom: 1px solid rgba(91, 61, 0, 0.18);
+      color: #4a3300;
+      font-size: 0.95rem;
+    }
+
+    .site-notice .container {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .site-notice strong {
+      color: #2f2100;
+    }
+
+    .page-about .about-framing-grid {
+      align-items: stretch;
+    }
+
+    .page-about .about-framing-grid .about-framing-panel {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .page-about .about-framing-grid .panel-body {
+      flex: 1;
+    }
+
+    .page-about .about-framing-grid .panel-body > :first-child {
+      margin-top: 0;
+    }
+  </style>
 </head>
 <body class="page-about">
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="../" aria-label="The Grenfell Curriculum home">
       <span class="brand-title">The Grenfell Curriculum</span>
-        <span class="brand-tagline">Memory, justice and education after Grenfell</span>
+      <span class="brand-tagline">Memory, justice and education after Grenfell</span>
     </a>
     <button class="nav-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" data-nav-toggle>
       <span>Menu</span><span aria-hidden="true"></span>
@@ -25,6 +60,13 @@
     </nav>
   </div>
 </header>
+
+  <div class="site-notice" role="status" aria-live="polite">
+    <div class="container">
+      <strong>Notice:</strong> The Teacher CPD is temporarily unavailable because the Canvas platform is currently down due to a cyberattack.
+    </div>
+  </div>
+
   <main id="main">
 
     <section class="page-hero page-heading">
@@ -44,7 +86,7 @@
           <h2>Why it was developed</h2>
           <p>Many teachers recognise the importance of teaching about Grenfell but feel underprepared to do so. This project provides practical support so schools can approach difficult material confidently, safely and responsibly.</p>
         </div>
-        <div class="grid two">
+        <div class="grid two about-framing-grid">
           <div class="about-framing-panel">
             <div class="panel-header">
               <span class="panel-icon" aria-hidden="true">
@@ -167,7 +209,6 @@
               <rect width="600" height="420" fill="#edf8f2"/>
               <circle cx="300" cy="160" r="58" fill="#13a66b" opacity="0.22"/>
               <path d="M200 330c12-70 62-108 100-108s88 38 100 108" fill="#13a66b" opacity="0.22"/>
-
             </svg>
             <h3>Callie Langley</h3>
             <p class="role">Research Assistant · University of Southampton</p>
@@ -178,7 +219,6 @@
               <rect width="600" height="420" fill="#edf8f2"/>
               <circle cx="300" cy="160" r="58" fill="#13a66b" opacity="0.22"/>
               <path d="M200 330c12-70 62-108 100-108s88 38 100 108" fill="#13a66b" opacity="0.22"/>
-
             </svg>
             <h3>Leah Mainwaring</h3>
             <p class="role">Research Assistant · University of Southampton</p>
