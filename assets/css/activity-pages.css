@@ -935,3 +935,260 @@ body.page-activity .activity-grenfell-timeline-activity .card-header {
     border: 0 !important;
   }
 }
+
+/* Readability and visual-coherence pass — May 2026
+   Keeps the main site header/footer untouched; these rules apply only inside activity pages. */
+body.page-activity .activity-page {
+  font-size: 1.04rem !important;
+  line-height: 1.72 !important;
+}
+
+body.page-activity .activity-page p,
+body.page-activity .activity-page li,
+body.page-activity .activity-page label,
+body.page-activity .activity-page .instructions p,
+body.page-activity .activity-page .section-intro,
+body.page-activity .activity-page .timeline-phase-intro,
+body.page-activity .activity-page .card-body-inner p,
+body.page-activity .activity-page .card-reflection,
+body.page-activity .activity-page .prompt-text,
+body.page-activity .activity-page .guidance-note,
+body.page-activity .activity-page .checkbox-label,
+body.page-activity .activity-page .reflection-label,
+body.page-activity .activity-page .q-text,
+body.page-activity .activity-page textarea,
+body.page-activity .activity-page input[type="text"],
+body.page-activity .activity-page input[type="search"] {
+  max-width: none !important;
+  font-size: 1rem !important;
+  line-height: 1.68 !important;
+  letter-spacing: 0 !important;
+}
+
+body.page-activity .activity-page .activity-label,
+body.page-activity .activity-page .meta-bar span,
+body.page-activity .activity-page .tab-count,
+body.page-activity .activity-page .section-time,
+body.page-activity .activity-page .progress-text,
+body.page-activity .activity-page .char-count,
+body.page-activity .activity-page .error-msg,
+body.page-activity .activity-page #status-msg {
+  font-size: 0.88rem !important;
+  letter-spacing: 0.02em !important;
+}
+
+body.page-activity .activity-page h1 {
+  max-width: 980px !important;
+  font-family: var(--font-heading) !important;
+  font-size: clamp(2.35rem, 4.7vw, 4.25rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0.005em !important;
+}
+
+body.page-activity .activity-page h2 {
+  max-width: none !important;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(1.35rem, 2vw, 1.72rem) !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0 !important;
+}
+
+body.page-activity .activity-page h3,
+body.page-activity .activity-page .section-title,
+body.page-activity .activity-page .card-title,
+body.page-activity .activity-page .out-heading {
+  font-family: var(--font-sans) !important;
+  font-size: 1.12rem !important;
+  line-height: 1.34 !important;
+  letter-spacing: 0 !important;
+}
+
+body.page-activity .activity-page header {
+  padding: clamp(1.8rem, 3.4vw, 3rem) !important;
+}
+
+body.page-activity .activity-page .subtitle,
+body.page-activity .activity-page .intro-text {
+  max-width: 880px !important;
+  font-size: 1.08rem !important;
+  line-height: 1.72 !important;
+}
+
+body.page-activity .activity-page button,
+body.page-activity .activity-page .btn,
+body.page-activity .activity-page .check-btn {
+  font-size: 1rem !important;
+}
+
+body.page-activity .activity-page .instructions,
+body.page-activity .activity-page .card,
+body.page-activity .activity-page .section-card,
+body.page-activity .activity-page .reflection-section,
+body.page-activity .activity-page .self-check {
+  padding: clamp(1.4rem, 2.8vw, 1.95rem) !important;
+}
+
+/* Remove the additional green prompt boxes in the lesson-design workbook. */
+body.page-activity .activity-grenfell-lesson-design .prompt-box {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-left: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+body.page-activity .activity-grenfell-lesson-design .prompt-text {
+  margin-bottom: 0.35rem !important;
+}
+
+body.page-activity .activity-grenfell-lesson-design .guidance-note {
+  margin: 0 0 0.9rem !important;
+}
+
+body.page-activity .activity-grenfell-lesson-design .section-header {
+  margin-bottom: 1.1rem !important;
+}
+
+body.page-activity .activity-grenfell-lesson-design .section-card {
+  box-shadow: var(--shadow-card) !important;
+}
+
+/* Let instruction copy use the full width of its box. */
+body.page-activity .activity-page .instructions p,
+body.page-activity .activity-page .instructions h2 {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* Timeline: make green prompt panels align with the full card width. */
+body.page-activity .activity-grenfell-timeline-activity .timeline-phase-intro {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .card-body-inner {
+  padding: 0 1.35rem 1.35rem !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .card-reflection {
+  display: block !important;
+  width: calc(100% + 2.7rem) !important;
+  max-width: none !important;
+  margin: 1rem -1.35rem -1.35rem !important;
+  padding: 1rem 1.35rem !important;
+  border-radius: 0 0 var(--radius) var(--radius) !important;
+  box-sizing: border-box !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .card-date {
+  font-size: 0.95rem !important;
+  letter-spacing: 0 !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .card-title {
+  font-size: 1.08rem !important;
+}
+
+/* Moral compass: shorten the scale and align labels/ticks with the slider endpoints. */
+body.page-activity .activity-grenfell-moral-compass .slider-container {
+  --slider-edge: clamp(3.75rem, 7vw, 5.25rem);
+  overflow: visible !important;
+  padding: 0.95rem 0 0 !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass input[type="range"] {
+  width: calc(100% - (var(--slider-edge) * 2)) !important;
+  margin-left: var(--slider-edge) !important;
+  margin-right: var(--slider-edge) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels {
+  width: calc(100% - (var(--slider-edge) * 2)) !important;
+  margin-left: var(--slider-edge) !important;
+  margin-right: var(--slider-edge) !important;
+  overflow: visible !important;
+  height: 4.25rem !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels span {
+  width: 8.2rem !important;
+  max-width: 8.2rem !important;
+  font-size: 0.78rem !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0 !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels span::before {
+  width: 2px !important;
+  height: 10px !important;
+  margin: 0 auto 0.45rem !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-1 {
+  left: 0 !important;
+  text-align: left !important;
+  transform: translateX(0) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-2 { left: 25% !important; }
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-3 { left: 50% !important; }
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-4 { left: 75% !important; }
+
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-5 {
+  left: 100% !important;
+  text-align: right !important;
+  transform: translateX(-100%) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-1::before {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-5::before {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+@media (max-width: 760px) {
+  body.page-activity .activity-page {
+    font-size: 1rem !important;
+  }
+
+  body.page-activity .activity-page h1 {
+    font-size: clamp(2rem, 10vw, 3rem) !important;
+  }
+
+  body.page-activity .activity-grenfell-moral-compass .slider-container {
+    --slider-edge: 2.8rem;
+  }
+
+  body.page-activity .activity-grenfell-moral-compass .range-labels {
+    height: 4.9rem !important;
+  }
+
+  body.page-activity .activity-grenfell-moral-compass .range-labels span {
+    width: 5.7rem !important;
+    max-width: 5.7rem !important;
+    font-size: 0.68rem !important;
+  }
+
+  body.page-activity .activity-grenfell-timeline-activity .card-reflection {
+    width: calc(100% + 2rem) !important;
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
+    margin-bottom: -1rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  body.page-activity .activity-grenfell-timeline-activity .card-body-inner {
+    padding: 0 1rem 1rem !important;
+  }
+}
