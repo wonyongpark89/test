@@ -1,0 +1,831 @@
+/* Activity page refinements
+   Applies only to integrated online activities. Keeps the activity content intact while
+   aligning the visual treatment with the wider Grenfell Curriculum website. */
+
+body.page-activity,
+body.page-activity * {
+  font-family: var(--font-sans) !important;
+}
+
+body.page-activity {
+  background: #fdfaf4;
+}
+
+body.page-activity .site-header,
+body.page-activity .site-footer {
+  font-family: var(--font-sans) !important;
+}
+
+body.page-activity .activity-page {
+  --bg: #fdfaf4;
+  --bg-card: #ffffff;
+  --text-primary: var(--ink);
+  --text-secondary: var(--charcoal);
+  --text-muted: var(--muted);
+  --border: var(--line);
+  --border-light: #edf4ef;
+  --accent-before: #8a6a14;
+  --accent-before-bg: #fff8e2;
+  --accent-during: #8f2f2f;
+  --accent-during-bg: #fff1ef;
+  --accent-after: #2f648b;
+  --accent-after-bg: #eef6ff;
+  --green: var(--green-800);
+  --green-bg: var(--green-50);
+  --incorrect-red: #8f2f2f;
+  --incorrect-bg: #fff1ef;
+  --shadow-sm: var(--shadow-card);
+  --shadow-md: var(--shadow-soft);
+  --radius: 18px;
+  --activity-max: 980px;
+
+  display: block !important;
+  align-items: initial !important;
+  min-height: auto !important;
+  width: 100%;
+  margin: 0;
+  padding: clamp(1.2rem, 3vw, 2.6rem) 1rem clamp(3rem, 6vw, 5rem) !important;
+  color: var(--text-primary);
+  background:
+    radial-gradient(circle at 8% 4%, rgba(19, 166, 107, 0.10), transparent 28rem),
+    linear-gradient(180deg, #fdf9f2 0%, #f7f0e4 100%);
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.page-activity .activity-page * {
+  box-sizing: border-box;
+}
+
+body.page-activity .activity-back {
+  width: 100%;
+  max-width: var(--activity-max);
+  margin: 0 auto 1rem;
+}
+
+body.page-activity .activity-back .btn {
+  width: auto;
+  min-height: auto;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  box-shadow: none;
+}
+
+body.page-activity .activity-page > .container,
+body.page-activity .activity-page .page-container {
+  width: 100%;
+  max-width: var(--activity-max) !important;
+  margin: 0 auto !important;
+}
+
+body.page-activity .activity-page header {
+  text-align: left !important;
+  padding: clamp(1.6rem, 3vw, 2.4rem) !important;
+  margin: 0 0 1.4rem !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-lg) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f4fbf6 100%) !important;
+  box-shadow: var(--shadow-card) !important;
+}
+
+body.page-activity .activity-grenfell-deconstructing-media > .container {
+  overflow: hidden;
+  min-height: auto !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-lg) !important;
+  background: var(--bg-card) !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+body.page-activity .activity-grenfell-deconstructing-media > .container > header {
+  margin: 0 !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--border) !important;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0 !important;
+  box-shadow: none !important;
+}
+
+body.page-activity .activity-label {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.45rem;
+  width: auto;
+  margin: 0 0 0.75rem !important;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid rgba(0, 106, 70, 0.14);
+  border-radius: 999px;
+  background: var(--green-50);
+  color: var(--green-800) !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2;
+  letter-spacing: 0.09em !important;
+  text-transform: uppercase;
+}
+
+body.page-activity .activity-page h1 {
+  max-width: 760px;
+  margin: 0 !important;
+  color: var(--ink) !important;
+  font-size: clamp(1.85rem, 4vw, 3rem) !important;
+  line-height: 1.08 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.035em;
+}
+
+body.page-activity .activity-page .subtitle,
+body.page-activity .activity-page .intro-text {
+  max-width: 720px !important;
+  margin: 0.85rem 0 0 !important;
+  color: var(--charcoal) !important;
+  font-size: 1.03rem !important;
+  line-height: 1.65 !important;
+}
+
+body.page-activity .activity-page h2 {
+  margin: 0 0 1rem !important;
+  padding-bottom: 0.6rem !important;
+  border-bottom: 1px solid var(--border) !important;
+  color: var(--ink) !important;
+  font-size: clamp(1.16rem, 1.8vw, 1.42rem) !important;
+  line-height: 1.25 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.015em;
+}
+
+body.page-activity .activity-page h3,
+body.page-activity .activity-page .section-title,
+body.page-activity .activity-page .card-title,
+body.page-activity .activity-page .out-heading {
+  color: var(--ink) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em;
+}
+
+body.page-activity .activity-page p,
+body.page-activity .activity-page li,
+body.page-activity .activity-page label {
+  color: var(--text-secondary);
+}
+
+body.page-activity .activity-page ul {
+  padding-left: 1.15rem !important;
+}
+
+body.page-activity .activity-page li + li {
+  margin-top: 0.35rem;
+}
+
+body.page-activity .activity-page .meta-bar {
+  justify-content: flex-start !important;
+  gap: 0.55rem !important;
+  margin-top: 1rem !important;
+}
+
+body.page-activity .activity-page .meta-bar span,
+body.page-activity .activity-page .tab-count,
+body.page-activity .activity-page .section-time {
+  border-radius: 999px;
+  background: var(--green-50);
+  color: var(--green-800) !important;
+  padding: 0.28rem 0.62rem;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+}
+
+body.page-activity .activity-page .meta-bar span::before {
+  display: none !important;
+}
+
+body.page-activity .activity-page textarea,
+body.page-activity .activity-page input[type="text"],
+body.page-activity .activity-page input[type="search"] {
+  width: 100%;
+  min-height: 9rem;
+  padding: 0.95rem 1rem !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  background: #fff !important;
+  color: var(--ink) !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  box-shadow: inset 0 1px 2px rgba(3, 27, 18, 0.03);
+}
+
+body.page-activity .activity-page textarea:focus,
+body.page-activity .activity-page input:focus-visible {
+  border-color: var(--green-700) !important;
+  outline: 3px solid rgba(245, 197, 66, 0.45) !important;
+  outline-offset: 2px;
+}
+
+body.page-activity .activity-page button,
+body.page-activity .activity-page .btn,
+body.page-activity .activity-page .check-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.75rem 1rem !important;
+  border-radius: 999px !important;
+  border: 1px solid transparent !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+body.page-activity .activity-page button:hover:not(:disabled),
+body.page-activity .activity-page .btn:hover:not(:disabled),
+body.page-activity .activity-page .check-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+body.page-activity .activity-page .btn-primary,
+body.page-activity .activity-page .check-btn,
+body.page-activity .activity-page #generateBtn {
+  background: var(--green-800) !important;
+  color: #fff !important;
+  border-color: var(--green-800) !important;
+  box-shadow: 0 8px 18px rgba(0, 106, 70, 0.16) !important;
+}
+
+body.page-activity .activity-page .btn-secondary,
+body.page-activity .activity-page .btn-outline,
+body.page-activity .activity-page .activity-back .btn {
+  background: #fff !important;
+  color: var(--green-800) !important;
+  border-color: var(--line-strong) !important;
+  box-shadow: none !important;
+}
+
+body.page-activity .activity-page button:disabled,
+body.page-activity .activity-page .btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Deconstructing disaster narratives */
+body.page-activity .activity-grenfell-deconstructing-media .progress-container {
+  height: 0.55rem !important;
+  background: #edf4ef !important;
+}
+
+body.page-activity .activity-grenfell-deconstructing-media .progress-bar {
+  border-radius: 0 999px 999px 0;
+  background: linear-gradient(90deg, var(--green-800), var(--green-600)) !important;
+}
+
+body.page-activity .activity-grenfell-deconstructing-media .content-area {
+  padding: clamp(1.3rem, 3vw, 2.2rem) !important;
+}
+
+body.page-activity .activity-grenfell-deconstructing-media .timeline-box {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem !important;
+  margin: 1.2rem 0 !important;
+}
+
+body.page-activity .activity-grenfell-deconstructing-media .timeline-card,
+body.page-activity .activity-grenfell-deconstructing-media .reflection-box,
+body.page-activity .activity-grenfell-deconstructing-media .scenario-box,
+body.page-activity .activity-grenfell-deconstructing-media .quiz-question {
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  background: #fff !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+body.page-activity .activity-grenfell-deconstructing-media .timeline-card {
+  padding: 1.2rem !important;
+}
+
+body.page-activity .activity-grenfell-deconstructing-media .timeline-card h3 {
+  margin: 0 0 0.65rem !important;
+  font-size: 1.05rem !important;
+}
+
+body.page-activity .activity-grenfell-deconstructing-media .reflection-box,
+body.page-activity .activity-grenfell-deconstructing-media .scenario-box {
+  margin-top: 1rem !important;
+  padding: 1rem 1.15rem !important;
+  background: var(--green-50) !important;
+  border-color: rgba(0, 106, 70, 0.16) !important;
+}
+
+body.page-activity .activity-grenfell-deconstructing-media .quiz-question {
+  margin-top: 1rem !important;
+  padding: 1.2rem !important;
+}
+
+body.page-activity .activity-grenfell-deconstructing-media .quiz-options {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0.9rem 0 1rem !important;
+}
+
+body.page-activity .activity-grenfell-deconstructing-media .quiz-options label {
+  display: flex !important;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.78rem 0.9rem !important;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  cursor: pointer;
+}
+
+body.page-activity .activity-grenfell-deconstructing-media .quiz-options label:hover {
+  border-color: var(--green-700);
+  background: var(--green-50);
+}
+
+body.page-activity .activity-grenfell-deconstructing-media .feedback {
+  margin-top: 0.8rem !important;
+  padding: 0.85rem 0.95rem !important;
+  border-radius: var(--radius-sm) !important;
+  font-weight: 600;
+}
+
+body.page-activity .activity-grenfell-deconstructing-media .feedback.correct {
+  background: var(--green-50) !important;
+  color: var(--green-900) !important;
+  border: 1px solid rgba(0, 106, 70, 0.18);
+}
+
+body.page-activity .activity-grenfell-deconstructing-media .feedback.incorrect {
+  background: var(--incorrect-bg) !important;
+  color: var(--incorrect-red) !important;
+  border: 1px solid rgba(143, 47, 47, 0.18);
+}
+
+body.page-activity .activity-grenfell-deconstructing-media .card-nav {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem clamp(1.3rem, 3vw, 2.2rem) !important;
+  border-top: 1px solid var(--border) !important;
+  background: #fbfdfb !important;
+}
+
+body.page-activity .activity-grenfell-deconstructing-media #pageIndicator {
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Lesson-design workbook */
+body.page-activity .activity-grenfell-lesson-design .section-card,
+body.page-activity .activity-grenfell-moral-compass .card,
+body.page-activity .activity-grenfell-timeline-activity .instructions,
+body.page-activity .activity-grenfell-timeline-activity .reflection-section,
+body.page-activity .activity-grenfell-timeline-activity .self-check {
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  background: #fff !important;
+  box-shadow: var(--shadow-card) !important;
+}
+
+body.page-activity .activity-grenfell-lesson-design .section-card {
+  padding: clamp(1.2rem, 2.5vw, 1.6rem) !important;
+  margin-bottom: 1rem !important;
+  transition: none !important;
+}
+
+body.page-activity .activity-grenfell-lesson-design .section-card:hover {
+  transform: none !important;
+}
+
+body.page-activity .activity-grenfell-lesson-design .section-header {
+  align-items: flex-start !important;
+  gap: 1rem;
+  padding-bottom: 0.75rem !important;
+  margin-bottom: 1rem !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+body.page-activity .activity-grenfell-lesson-design .section-title {
+  font-size: 1.12rem !important;
+  line-height: 1.28 !important;
+}
+
+body.page-activity .activity-grenfell-lesson-design .prompt-box {
+  margin-bottom: 1rem;
+}
+
+body.page-activity .activity-grenfell-lesson-design .prompt-text,
+body.page-activity .activity-grenfell-moral-compass .scenario-desc,
+body.page-activity .activity-grenfell-moral-compass .reflection-label {
+  color: var(--ink) !important;
+  font-weight: 700 !important;
+}
+
+body.page-activity .activity-grenfell-lesson-design .guidance-note {
+  margin: 0.35rem 0 0.9rem !important;
+  color: var(--muted) !important;
+  font-size: 0.92rem !important;
+}
+
+body.page-activity .activity-grenfell-lesson-design .checklist-group-title {
+  margin: 1.1rem 0 0.6rem !important;
+  color: var(--green-900) !important;
+  font-size: 0.82rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+body.page-activity .activity-grenfell-lesson-design .checklist-container {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem !important;
+}
+
+body.page-activity .activity-grenfell-lesson-design .checkbox-label,
+body.page-activity .activity-grenfell-timeline-activity .check-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.65rem !important;
+  padding: 0.78rem 0.9rem !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  background: #fff !important;
+}
+
+body.page-activity .activity-grenfell-lesson-design .actions,
+body.page-activity .activity-grenfell-moral-compass .generate-wrap,
+body.page-activity .activity-grenfell-lesson-design #output-view .actions {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.75rem !important;
+  justify-content: flex-start !important;
+  margin-top: 1.25rem !important;
+}
+
+body.page-activity .activity-grenfell-lesson-design #output-view {
+  display: none;
+}
+
+body.page-activity .activity-grenfell-lesson-design .output-document {
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  background: #fff !important;
+  padding: clamp(1.2rem, 3vw, 2rem) !important;
+  box-shadow: var(--shadow-card) !important;
+}
+
+body.page-activity .activity-grenfell-lesson-design .out-section {
+  margin-bottom: 1.25rem !important;
+  padding-bottom: 1rem !important;
+  border-bottom: 1px solid var(--border-light) !important;
+}
+
+body.page-activity .activity-grenfell-lesson-design .out-subheading {
+  margin-top: 0.75rem !important;
+  color: var(--green-900) !important;
+  font-weight: 700 !important;
+}
+
+/* Moral compass */
+body.page-activity .activity-grenfell-moral-compass .card {
+  padding: clamp(1.2rem, 2.5vw, 1.6rem) !important;
+  margin-bottom: 1rem !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .section-intro,
+body.page-activity .activity-grenfell-timeline-activity .instructions p,
+body.page-activity .activity-grenfell-timeline-activity .reflection-intro {
+  color: var(--muted) !important;
+  font-size: 0.97rem !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .scenario-item {
+  margin: 1.25rem 0 2rem !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .slider-container {
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0.75rem 0 0 !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass input[type="range"] {
+  width: 100% !important;
+  margin: 0 !important;
+  cursor: pointer;
+}
+
+body.page-activity .activity-grenfell-moral-compass input[type="range"]::-webkit-slider-runnable-track {
+  height: 0.55rem !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, #f5d77b 0%, #e8e0c8 50%, #9bc6e0 100%) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass input[type="range"]::-webkit-slider-thumb {
+  width: 1.45rem !important;
+  height: 1.45rem !important;
+  margin-top: -0.45rem !important;
+  border: 3px solid #fff !important;
+  background: var(--green-800) !important;
+  box-shadow: 0 4px 12px rgba(3, 27, 18, 0.22) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass input[type="range"]::-moz-range-track {
+  height: 0.55rem !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, #f5d77b 0%, #e8e0c8 50%, #9bc6e0 100%) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass input[type="range"]::-moz-range-thumb {
+  width: 1.35rem !important;
+  height: 1.35rem !important;
+  border: 3px solid #fff !important;
+  background: var(--green-800) !important;
+  box-shadow: 0 4px 12px rgba(3, 27, 18, 0.22) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.45rem;
+  width: 100% !important;
+  height: auto !important;
+  margin-top: 0.75rem !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels span {
+  position: static !important;
+  transform: none !important;
+  width: auto !important;
+  color: var(--muted) !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  text-align: center;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels span::before {
+  display: none !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .char-count,
+body.page-activity .activity-grenfell-moral-compass .error-msg,
+body.page-activity .activity-grenfell-lesson-design #status-msg {
+  color: var(--muted) !important;
+  font-size: 0.88rem !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass #summary-section {
+  display: none;
+  border-color: rgba(0, 106, 70, 0.2) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .summary-content {
+  white-space: pre-wrap;
+  padding: 1rem !important;
+  border-radius: var(--radius-sm) !important;
+  background: var(--green-50) !important;
+  color: var(--ink) !important;
+}
+
+/* Timeline activity */
+body.page-activity .activity-grenfell-timeline-activity .instructions {
+  padding: 1.2rem 1.35rem !important;
+  margin-bottom: 1rem !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .progress-section {
+  display: flex !important;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 1rem 0 !important;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: var(--shadow-card);
+}
+
+body.page-activity .activity-grenfell-timeline-activity .progress-bar-container {
+  flex: 1;
+  height: 0.55rem !important;
+  border-radius: 999px !important;
+  background: #edf4ef !important;
+  overflow: hidden;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .progress-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--green-800), var(--green-600)) !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .progress-text {
+  min-width: 8rem;
+  color: var(--muted) !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  text-align: right;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .phase-tabs {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem !important;
+  margin: 1rem 0 1.3rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .phase-tab {
+  justify-content: center;
+  border: 1px solid var(--border) !important;
+  border-radius: 999px !important;
+  background: #fff !important;
+  color: var(--green-900) !important;
+  box-shadow: var(--shadow-card) !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .phase-tab::after {
+  display: none !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .phase-tab.active {
+  background: var(--green-800) !important;
+  color: #fff !important;
+  border-color: var(--green-800) !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .phase-tab.active .tab-count {
+  background: rgba(255,255,255,0.18) !important;
+  color: #fff !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .timeline-phase-intro {
+  margin: 0 0 1rem !important;
+  padding: 1rem 1.15rem;
+  border-left: 4px solid var(--green-800);
+  border-radius: var(--radius-sm);
+  background: var(--green-50);
+  color: var(--charcoal) !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .timeline-list {
+  position: relative;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .timeline-list::before {
+  background: var(--line) !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .timeline-card {
+  padding-bottom: 1rem !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .timeline-dot {
+  width: 1rem !important;
+  height: 1rem !important;
+  border-width: 3px !important;
+  background: #fff !important;
+  box-shadow: 0 0 0 4px #fdfaf4;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .timeline-card.revealed .timeline-dot {
+  background: var(--green-800) !important;
+  border-color: var(--green-800) !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .card-inner {
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  background: #fff !important;
+  box-shadow: var(--shadow-card) !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .card-header {
+  display: grid !important;
+  grid-template-columns: minmax(8rem, auto) 1fr auto;
+  align-items: center;
+  gap: 1rem !important;
+  padding: 1rem 1.15rem !important;
+  cursor: pointer;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .card-date {
+  color: var(--green-800) !important;
+  font-size: 0.84rem !important;
+  font-weight: 800 !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .card-title {
+  font-size: 1rem !important;
+  line-height: 1.35 !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .card-toggle {
+  color: var(--green-800) !important;
+  font-size: 1.25rem !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .card-body-inner {
+  padding: 0 1.15rem 1.15rem !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .card-reflection {
+  margin-top: 1rem !important;
+  padding: 0.9rem 1rem !important;
+  border-radius: var(--radius-sm) !important;
+  background: var(--green-50) !important;
+  color: var(--green-900) !important;
+  font-weight: 600;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .reflection-section,
+body.page-activity .activity-grenfell-timeline-activity .self-check {
+  padding: clamp(1.2rem, 2.5vw, 1.6rem) !important;
+  margin-top: 1.2rem !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .reflection-q {
+  padding: 1rem 0 !important;
+  border-bottom: 1px solid var(--border-light) !important;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .q-number {
+  color: var(--green-800) !important;
+  font-weight: 800 !important;
+  font-size: 0.82rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+body.page-activity .activity-grenfell-timeline-activity .q-text {
+  color: var(--ink) !important;
+  font-weight: 700 !important;
+  margin: 0.2rem 0 0.7rem !important;
+}
+
+@media (max-width: 760px) {
+  body.page-activity .activity-page {
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
+  }
+
+  body.page-activity .activity-page header {
+    padding: 1.35rem !important;
+  }
+
+  body.page-activity .activity-grenfell-deconstructing-media .timeline-box,
+  body.page-activity .activity-grenfell-lesson-design .checklist-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.page-activity .activity-grenfell-deconstructing-media .card-nav,
+  body.page-activity .activity-grenfell-timeline-activity .progress-section,
+  body.page-activity .activity-grenfell-timeline-activity .card-header {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+
+  body.page-activity .activity-grenfell-timeline-activity .progress-text {
+    min-width: 0;
+    text-align: left;
+  }
+
+  body.page-activity .activity-grenfell-timeline-activity .phase-tabs {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.page-activity .activity-grenfell-moral-compass .range-labels span {
+    font-size: 0.64rem !important;
+  }
+}
+
+@media print {
+  body.page-activity .site-header,
+  body.page-activity .site-footer,
+  body.page-activity .activity-back,
+  body.page-activity .activity-page header,
+  body.page-activity .activity-page .actions,
+  body.page-activity .activity-page button {
+    display: none !important;
+  }
+
+  body.page-activity .activity-page {
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  body.page-activity .activity-page .output-document {
+    box-shadow: none !important;
+    border: 0 !important;
+  }
+}
