@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design Your Learning Experience | The Grenfell Curriculum</title>
+  <meta name="description" content="A planning workbook supporting teachers to draft a Grenfell learning experience, including learner context, focus areas, objectives, safe space and a core activity.">
+  <meta name="theme-color" content="#008a59">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+  <style>
+.activity-page {
+            --bg: #FAF8F5;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #4A4A4A;
+            --text-muted: #7A7A7A;
+            --border: #E0DCD6;
+            --border-light: #EDEBE7;
+            --accent-before: #8B6914;
+            --accent-after: #2B5A83;
+            --green: #2D6A4F;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --radius: 6px;
+        }
+.activity-page * { box-sizing: border-box; margin: 0; padding: 0; }
+.activity-page {
+            font-family: var(--font-sans);
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            overscroll-behavior-y: contain;
+        }
+.activity-page .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+/* ─── HEADER ─── */
+.activity-page header {
+            text-align: center;
+            padding: 2.5rem 1rem 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+.activity-page header .activity-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+.activity-page h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 700;
+            line-height: 1.25;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+.activity-page .subtitle {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            max-width: 540px;
+            margin: 0 auto;
+            line-height: 1.55;
+        }
+.activity-page .meta-bar {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.25rem;
+            flex-wrap: wrap;
+        }
+.activity-page .meta-bar span {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+.activity-page .meta-bar span::before {
+            content: "";
+            display: inline-block;
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--border);
+        }
+/* ─── FORM & SECTIONS ─── */
+.activity-page .section-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+            transition: box-shadow 0.25s ease, transform 0.25s ease;
+        }
+.activity-page .section-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-1px);
+        }
+.activity-page .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid var(--border);
+        }
+.activity-page .section-title {
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+.activity-page .section-time {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+/* ─── PROMPT BOX ─── */
+.activity-page .prompt-box {
+            background: var(--bg);
+            border-left: 3px solid var(--accent-after);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1rem 1.15rem;
+            margin-bottom: 1rem;
+        }
+.activity-page .prompt-text {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.35rem;
+        }
+.activity-page .guidance-note {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 0.75rem;
+        }
+/* ─── CHECKLIST ─── */
+.activity-page .checklist-group-title {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-after);
+            margin-bottom: 0.5rem;
+            margin-top: 1.25rem;
+        }
+.activity-page .checklist-group-title:first-of-type { margin-top: 0.5rem; }
+.activity-page .checklist-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 0.75rem;
+            margin-bottom: 1rem;
+        }
+.activity-page .checkbox-label {
+            display: flex;
+            align-items: center;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 0.4rem 0.5rem;
+            border-radius: 4px;
+            transition: background 0.15s;
+        }
+.activity-page .checkbox-label:hover { background-color: var(--border-light); }
+.activity-page .checkbox-label input { margin-right: 0.55rem; accent-color: var(--accent-after); transform: scale(1.15); }
+/* ─── TEXTAREA ─── */
+.activity-page textarea {
+            width: 100%;
+            padding: 0.75rem 0.9rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-family: var(--font-sans);
+            font-size: 0.84rem;
+            line-height: 1.55;
+            color: var(--text-primary);
+            min-height: 95px;
+            resize: vertical;
+            background: var(--bg-card);
+        }
+.activity-page textarea:focus {
+            outline: none;
+            border-color: var(--accent-after);
+            box-shadow: 0 0 0 3px rgba(43,90,131,0.08);
+        }
+/* ─── ACTIONS ─── */
+.activity-page .actions {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+.activity-page .btn {
+            border: none;
+            padding: 0.7rem 1.6rem;
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+.activity-page .btn-primary { background-color: var(--accent-after); color: white; }
+.activity-page .btn-primary:hover { background-color: #1F4A6E; transform: translateY(-1px); }
+.activity-page .btn-secondary { background-color: var(--bg-card); color: var(--text-secondary); border: 1px solid var(--border); }
+.activity-page .btn-secondary:hover { background-color: var(--border-light); color: var(--text-primary); }
+/* ─── PREVIEW / OUTPUT AREA ─── */
+.activity-page #output-view {
+            display: none; /* Hidden by default */
+            animation: fadeIn 0.4s ease;
+        }
+.activity-page .output-document {
+            background: white;
+            padding: 2.75rem;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
+        }
+.activity-page .out-section { margin-bottom: 2rem; }
+.activity-page .out-heading {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-after);
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 0.4rem;
+            margin-bottom: 0.8rem;
+        }
+.activity-page .out-subheading {
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            margin-bottom: 0.25rem;
+        }
+.activity-page .out-body {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            white-space: pre-wrap; /* Preserves line breaks */
+        }
+.activity-page .empty-field { color: var(--text-muted); font-style: italic; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+/* ─── STATUS MESSAGE ─── */
+.activity-page #status-msg {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--green);
+            font-weight: 600;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+/* ─── OUTPUT VIEW HEADING ─── */
+.activity-page #output-view h2 {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.35rem;
+            color: var(--text-primary);
+        }
+/* ─── FOOTER ─── */
+.activity-page footer {
+            margin-top: 2.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            line-height: 1.45;
+        }
+/* ─── PRINT STYLES ─── */
+@media print {.activity-page { background: white; padding: 0; }
+.activity-page .container { max-width: 100%; width: 100%; }
+/* Hide the form input view */
+.activity-page #form-view { display: none !important; }
+/* Force the output view to be visible, even if user didn't click generate */
+.activity-page #output-view { display: block !important; }
+/* Hide buttons and footer */
+.activity-page .actions, .activity-page footer, .activity-page header { display: none !important; }
+.activity-page .output-document {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                margin: 0;
+            }}
+@media (max-width: 600px) {.activity-page { padding: 1.25rem 1rem 3rem; }
+.activity-page header { padding: 1.5rem 0.5rem 1.25rem; }
+.activity-page .checklist-container { grid-template-columns: 1fr; }
+.activity-page .output-document { padding: 1.5rem; }}
+
+.activity-page {
+  --bg: var(--warm);
+  --bg-card: var(--white);
+  --text-primary: var(--ink);
+  --text-secondary: var(--charcoal);
+  --text-muted: var(--muted);
+  --border: var(--line);
+  --border-light: var(--green-100);
+  --green: var(--green-800);
+  --green-bg: var(--green-50);
+  --accent-before: #8b6914;
+  --accent-before-bg: #fff7df;
+  --accent-during: #9b2c2c;
+  --accent-during-bg: #fff3f1;
+  --accent-after: var(--green-800);
+  --accent-after-bg: var(--green-100);
+  --radius: var(--radius-sm);
+  --shadow-sm: var(--shadow-card);
+  --shadow-md: var(--shadow-soft);
+  --shadow-lg: var(--shadow-soft);
+}
+
+.activity-page .activity-back {
+  width: min(100% - 2.5rem, 900px);
+  margin: 0 auto 1.25rem;
+}
+
+.activity-page > .container,
+.activity-page > .page-container {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+  background: var(--white);
+}
+
+.activity-page header h1,
+.activity-page h1,
+.activity-page h2,
+.activity-page h3,
+.activity-page .section-title,
+.activity-page .card-title,
+.activity-page .q-text,
+.activity-page .out-heading {
+  font-family: var(--font-heading);
+  letter-spacing: 0;
+}
+
+.activity-page header .activity-label,
+.activity-page .activity-label {
+  color: var(--green-800);
+}
+
+.activity-page textarea,
+.activity-page input[type="text"],
+.activity-page input[type="search"] {
+  border-radius: var(--radius-sm);
+}
+
+.activity-page .btn,
+.activity-page button.btn,
+.activity-page .check-btn {
+  border-radius: 999px;
+}
+
+.activity-page .btn-primary,
+.activity-page .btn:not(.btn-outline):not(.btn-secondary):not(.secondary),
+.activity-page .check-btn {
+  background: var(--green-800);
+  color: var(--white);
+}
+
+.activity-page .btn-primary:hover,
+.activity-page .btn:not(.btn-outline):not(.btn-secondary):not(.secondary):hover,
+.activity-page .check-btn:hover {
+  background: var(--green-950);
+}
+
+.activity-page .btn-secondary,
+.activity-page .btn.secondary,
+.activity-page .btn-outline {
+  background: var(--green-50);
+  border: 1px solid var(--line-strong);
+  color: var(--green-900);
+}
+
+.activity-page .btn-secondary:hover,
+.activity-page .btn.secondary:hover,
+.activity-page .btn-outline:hover {
+  background: var(--green-100);
+  color: var(--green-950);
+}
+
+@media (max-width: 600px) {
+  .activity-page .activity-back {
+    width: min(100% - 2rem, 900px);
+  }
+}
+
+  </style>
+</head>
+<body class="page-activity page-activity-grenfell-lesson-design">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../" aria-label="The Grenfell Curriculum home">
+      <span class="brand-title">The Grenfell Curriculum</span>
+      <span class="brand-tagline">Memory, justice and education after Grenfell</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" data-nav-toggle>
+      <span>Menu</span><span aria-hidden="true"></span>
+    </button>
+    <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
+      <ul><li><a href="../../">Home</a></li><li><a href="../../about/">About</a></li><li><a href="../../principles/">Principles</a></li><li><a href="../../cpd/">CPD</a></li><li><a href="../../resources/" aria-current="page">Resources</a></li><li><a href="../../contact/">Contact</a></li></ul>
+    </nav>
+  </div>
+</header>
+  <main id="main" class="activity-page activity-grenfell-lesson-design">
+    <div class="activity-back"><a class="btn secondary" href="../../resources/#repository">← Back to resources</a></div>
+<div class="container">
+<header>
+<div class="activity-label">Workbook · 30 minutes</div>
+<h1>Design Your Learning Experience</h1>
+<p class="subtitle">Based on what you have learned about the Grenfell Tower fire and effective approaches to teaching sensitive and complex topics, begin designing a lesson plan.</p>
+<div class="meta-bar">
+</div>
+</header>
+<div id="form-view">
+<div class="section-card">
+<div class="section-header">
+<div class="section-title">1. Learners and Context</div>
+<span class="section-time">4 mins</span>
+</div>
+<div class="prompt-box">
+<div class="prompt-text">Who are your learners and what is their starting point?</div>
+<div class="guidance-note">Consider: age and key stage; subject context; prior knowledge; personal connections; sensitivities.</div>
+<textarea id="input-context" placeholder="e.g., Year 10 Citizenship. Mixed-ability group..."></textarea>
+</div>
+</div>
+<div class="section-card">
+<div class="section-header">
+<div class="section-title">2. Focus Areas</div>
+<span class="section-time">3 mins</span>
+</div>
+<div class="prompt-box">
+<div class="prompt-text">Which aspects of the Grenfell story will you prioritise?</div>
+</div>
+<div class="checklist-group-title">Knowledge and Understanding</div>
+<div class="checklist-container">
+<label class="checkbox-label"><input name="knowledge" type="checkbox" value="Life before the disaster"/> Life before the disaster</label>
+<label class="checkbox-label"><input name="knowledge" type="checkbox" value="The human impact"/> The human impact</label>
+<label class="checkbox-label"><input name="knowledge" type="checkbox" value="Community solidarity"/> Community solidarity</label>
+<label class="checkbox-label"><input name="knowledge" type="checkbox" value="Facts and causes"/> Facts and causes</label>
+<label class="checkbox-label"><input name="knowledge" type="checkbox" value="Unheeded warnings"/> Unheeded warnings</label>
+<label class="checkbox-label"><input name="knowledge" type="checkbox" value="Ongoing struggle for justice"/> Ongoing struggle for justice</label>
+</div>
+<div class="checklist-group-title">Skills and Disposition</div>
+<div class="checklist-container">
+<label class="checkbox-label"><input name="skills" type="checkbox" value="Decision making"/> Decision making</label>
+<label class="checkbox-label"><input name="skills" type="checkbox" value="Professional ethics"/> Professional ethics</label>
+<label class="checkbox-label"><input name="skills" type="checkbox" value="Empathy and emotional intelligence"/> Empathy and emotional intelligence</label>
+<label class="checkbox-label"><input name="skills" type="checkbox" value="Active listening"/> Active listening</label>
+<label class="checkbox-label"><input name="skills" type="checkbox" value="Community action"/> Community action</label>
+<label class="checkbox-label"><input name="skills" type="checkbox" value="Critical media literacy"/> Critical media literacy</label>
+</div>
+</div>
+<div class="section-card">
+<div class="section-header">
+<div class="section-title">3. Learning Objectives</div>
+<span class="section-time">4 mins</span>
+</div>
+<div class="prompt-box">
+<div class="prompt-text">Draft objectives across Knowledge, Skills, and Values.</div>
+<textarea id="input-objectives" placeholder="e.g., Knowledge: Understand deregulation..."></textarea>
+</div>
+</div>
+<div class="section-card">
+<div class="section-header">
+<div class="section-title">4. Creating a Safe Space</div>
+<span class="section-time">4 mins</span>
+</div>
+<div class="prompt-box">
+<div class="prompt-text">How will you manage the sensitivity of this material?</div>
+<textarea id="input-safety" placeholder="e.g., Establish ground rules..."></textarea>
+</div>
+</div>
+<div class="section-card">
+<div class="section-header">
+<div class="section-title">5. Activity Idea</div>
+<span class="section-time">5 mins</span>
+</div>
+<div class="prompt-box">
+<div class="prompt-text">Draft one core activity or task.</div>
+<textarea id="input-activity" placeholder="e.g., Students examine a timeline..."></textarea>
+</div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" onclick="generatePlan()">Finish &amp; Preview Plan</button>
+</div>
+</div>
+<div id="output-view">
+<div style="text-align: center; margin-bottom: 1.5rem;">
+<h2>Your Lesson Plan</h2>
+<p style="color: var(--text-muted); font-size: 0.9rem;">Review your plan below. You can now print, save as PDF, or copy the text.</p>
+</div>
+<div class="output-document" id="printable-content">
+</div>
+<div class="actions">
+<button class="btn btn-secondary" onclick="editPlan()">← Back to Edit</button>
+<button class="btn btn-secondary" onclick="copyPlan()">Copy Text</button>
+<button class="btn btn-primary" onclick="window.print()">Print / Save PDF</button>
+</div>
+<div id="status-msg"></div>
+</div>
+
+</div>
+  </main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h2>The Grenfell Curriculum</h2>
+        <p>Memory, justice and education after Grenfell.</p>
+        <p><strong>General enquiries:</strong> <a href="mailto:teachgrenfell@soton.ac.uk">teachgrenfell@soton.ac.uk</a></p>
+      </div>
+      <div>
+        <h3>Site links</h3>
+        <ul class="footer-links">
+          <li><a href="../../about/">About the project</a></li>
+          <li><a href="../../principles/">Principles</a></li>
+          <li><a href="../../cpd/">Teacher CPD</a></li>
+          <li><a href="../../resources/">Open resources</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Statements</h3>
+        <ul class="footer-links">
+          <li><a href="../../contact/#accessibility">Accessibility</a></li>
+          <li><a href="../../contact/#privacy">Privacy</a></li>
+          <li><a href="../../contact/#copyright">Copyright</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 The Grenfell Curriculum</p>
+    </div>
+  </div>
+</footer>
+<script>
+    // Helper to get checked boxes
+    function getCheckedValues(name) {
+        const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
+        let values = [];
+        checkboxes.forEach((checkbox) => {
+            values.push(checkbox.value);
+        });
+        return values.length > 0 ? values.join(", ") : "<span class='empty-field'>None selected</span>";
+    }
+
+    // Helper to format text areas (handle empty states)
+    function formatText(id) {
+        const val = document.getElementById(id).value.trim();
+        return val ? val : "<span class='empty-field'>No notes entered.</span>";
+    }
+
+    function generatePlan() {
+        // 1. Gather Data
+        const context = formatText('input-context');
+        const objectives = formatText('input-objectives');
+        const safety = formatText('input-safety');
+        const activity = formatText('input-activity');
+        
+        const knowledgeFocus = getCheckedValues('knowledge');
+        const skillsFocus = getCheckedValues('skills');
+
+        // 2. Build HTML Structure
+        let html = `
+            <div class="out-section">
+                <div class="out-heading">1. Learners & Context</div>
+                <div class="out-body">${context}</div>
+            </div>
+
+            <div class="out-section">
+                <div class="out-heading">2. Focus Areas</div>
+                <div class="out-subheading">Knowledge & Understanding</div>
+                <div class="out-body">${knowledgeFocus}</div>
+                <div class="out-subheading">Skills & Disposition</div>
+                <div class="out-body">${skillsFocus}</div>
+            </div>
+
+            <div class="out-section">
+                <div class="out-heading">3. Learning Objectives</div>
+                <div class="out-body">${objectives}</div>
+            </div>
+
+            <div class="out-section">
+                <div class="out-heading">4. Safe Space & Safeguarding</div>
+                <div class="out-body">${safety}</div>
+            </div>
+
+            <div class="out-section">
+                <div class="out-heading">5. Activity Idea</div>
+                <div class="out-body">${activity}</div>
+            </div>
+            
+            <div style="margin-top: 3rem; border-top: 1px solid #eee; pt: 1rem; font-size: 0.7rem; color: #999;">
+                Generated via Grenfell CPD Workbook
+            </div>
+        `;
+
+        // 3. Inject and Switch Views
+        document.getElementById('printable-content').innerHTML = html;
+        document.getElementById('form-view').style.display = 'none';
+        document.getElementById('output-view').style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+
+    function editPlan() {
+        document.getElementById('output-view').style.display = 'none';
+        document.getElementById('form-view').style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+
+    function copyPlan() {
+        const node = document.getElementById('printable-content');
+        const status = document.getElementById('status-msg');
+        
+        // 1. Create a selection range for the content
+        const range = document.createRange();
+        range.selectNode(node);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+
+        // 2. Try using the modern API first
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+             navigator.clipboard.writeText(node.innerText).then(() => {
+                status.innerText = "Copied to clipboard!";
+                status.style.opacity = 1;
+                setTimeout(() => { status.style.opacity = 0; window.getSelection().removeAllRanges(); }, 3000);
+            }).catch(err => {
+                // If API fails (common in iframes), leave the text selected and ask user to Ctrl+C
+                status.innerText = "Press Ctrl+C to copy selected text.";
+                status.style.opacity = 1;
+            });
+        } else {
+            // Fallback for older browsers or restricted iframes
+            try {
+                document.execCommand('copy');
+                status.innerText = "Copied to clipboard!";
+                status.style.opacity = 1;
+                setTimeout(() => { status.style.opacity = 0; window.getSelection().removeAllRanges(); }, 3000);
+            } catch (err) {
+                 status.innerText = "Press Ctrl+C to copy selected text.";
+                 status.style.opacity = 1;
+            }
+        }
+    }
+</script>
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,897 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grenfell Tower: A Timeline of Failures | The Grenfell Curriculum</title>
+  <meta name="description" content="An interactive timeline activity inviting users to explore failures before, during and after the fire and reflect on patterns across 14 events.">
+  <meta name="theme-color" content="#008a59">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+  <style>
+.activity-page {
+    --bg: #FAF8F5;
+    --bg-card: #FFFFFF;
+    --text-primary: #1A1A1A;
+    --text-secondary: #4A4A4A;
+    --text-muted: #7A7A7A;
+    --border: #E0DCD6;
+    --border-light: #EDEBE7;
+    --accent-before: #8B6914;
+    --accent-before-bg: #FDF6E3;
+    --accent-during: #9B2C2C;
+    --accent-during-bg: #FFF5F5;
+    --accent-after: #2B5A83;
+    --accent-after-bg: #EFF6FF;
+    --green: #2D6A4F;
+    --green-bg: #F0FFF4;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 30px rgba(0,0,0,0.1);
+    --radius: 6px;
+  }
+.activity-page * { margin: 0; padding: 0; box-sizing: border-box; }
+.activity-page {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+.activity-page .page-container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+/* ─── HEADER ─── */
+.activity-page header {
+    text-align: center;
+    padding: 2.5rem 1rem 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+.activity-page header .activity-label {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+.activity-page header h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+.activity-page header .subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.55;
+  }
+.activity-page .meta-bar {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.25rem;
+    flex-wrap: wrap;
+  }
+.activity-page .meta-bar span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+.activity-page .meta-bar span::before {
+    content: "";
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--border);
+  }
+/* ─── INSTRUCTIONS ─── */
+.activity-page .instructions {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+.activity-page .instructions h2 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+.activity-page .instructions p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+/* ─── PROGRESS ─── */
+.activity-page .progress-section {
+    margin-bottom: 2rem;
+  }
+.activity-page .progress-bar-container {
+    background: var(--border-light);
+    border-radius: 100px;
+    height: 8px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+.activity-page .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-before), var(--accent-during), var(--accent-after));
+    border-radius: 100px;
+    transition: width 0.5s ease;
+    width: 0%;
+  }
+.activity-page .progress-text {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: right;
+    font-weight: 600;
+  }
+/* ─── PHASE TABS ─── */
+.activity-page .phase-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 0;
+    border-bottom: 2px solid var(--border);
+  }
+.activity-page .phase-tab {
+    flex: 1;
+    padding: 0.85rem 0.5rem;
+    text-align: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    position: relative;
+    transition: color 0.25s;
+  }
+.activity-page .phase-tab::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0; right: 0;
+    height: 2px;
+    background: transparent;
+    transition: background 0.25s;
+  }
+.activity-page .phase-tab[data-phase="before"]:hover, .activity-page .phase-tab[data-phase="before"].active { color: var(--accent-before); }
+.activity-page .phase-tab[data-phase="before"].active::after { background: var(--accent-before); }
+.activity-page .phase-tab[data-phase="during"]:hover, .activity-page .phase-tab[data-phase="during"].active { color: var(--accent-during); }
+.activity-page .phase-tab[data-phase="during"].active::after { background: var(--accent-during); }
+.activity-page .phase-tab[data-phase="after"]:hover, .activity-page .phase-tab[data-phase="after"].active { color: var(--accent-after); }
+.activity-page .phase-tab[data-phase="after"].active::after { background: var(--accent-after); }
+.activity-page .phase-tab .tab-count {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.1em 0.45em;
+    border-radius: 100px;
+    background: var(--border-light);
+    color: var(--text-muted);
+    margin-left: 0.35rem;
+    vertical-align: middle;
+    transition: all 0.25s;
+  }
+.activity-page .phase-tab.active .tab-count {
+    background: currentColor;
+    color: var(--bg);
+  }
+/* ─── TIMELINE ─── */
+.activity-page .timeline-section {
+    padding-top: 1.75rem;
+  }
+.activity-page .timeline-phase-intro {
+    font-family: var(--font-heading);
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+    padding: 0 0.25rem;
+  }
+.activity-page .timeline-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+.activity-page .timeline-list::before {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+/* ─── TIMELINE CARD ─── */
+.activity-page .timeline-card {
+    position: relative;
+    padding-left: 48px;
+    padding-bottom: 1.75rem;
+  }
+.activity-page .timeline-card:last-child { padding-bottom: 0; }
+.activity-page .timeline-dot {
+    position: absolute;
+    left: 10px;
+    top: 4px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: var(--bg);
+    z-index: 1;
+    transition: all 0.3s;
+  }
+.activity-page .timeline-card[data-phase="before"] .timeline-dot { border-color: var(--accent-before); }
+.activity-page .timeline-card[data-phase="during"] .timeline-dot { border-color: var(--accent-during); }
+.activity-page .timeline-card[data-phase="after"] .timeline-dot { border-color: var(--accent-after); }
+.activity-page .timeline-card.revealed .timeline-dot {
+    transform: scale(1.1);
+  }
+.activity-page .timeline-card[data-phase="before"].revealed .timeline-dot { background: var(--accent-before); }
+.activity-page .timeline-card[data-phase="during"].revealed .timeline-dot { background: var(--accent-during); }
+.activity-page .timeline-card[data-phase="after"].revealed .timeline-dot { background: var(--accent-after); }
+.activity-page .card-inner {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.3s;
+  }
+.activity-page .timeline-card.revealed .card-inner {
+    box-shadow: var(--shadow-md);
+  }
+.activity-page .card-header {
+    padding: 0.85rem 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    user-select: none;
+  }
+.activity-page .card-header:hover { background: rgba(0,0,0,0.015); }
+.activity-page .card-date {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    white-space: nowrap;
+    min-width: 58px;
+    padding-top: 0.15rem;
+  }
+.activity-page .timeline-card[data-phase="before"] .card-date { color: var(--accent-before); }
+.activity-page .timeline-card[data-phase="during"] .card-date { color: var(--accent-during); }
+.activity-page .timeline-card[data-phase="after"] .card-date { color: var(--accent-after); }
+.activity-page .card-title-area { flex: 1; }
+.activity-page .card-title {
+    font-family: var(--font-heading);
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--text-primary);
+  }
+.activity-page .card-toggle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    transition: transform 0.25s;
+    flex-shrink: 0;
+    padding-top: 0.1rem;
+  }
+.activity-page .timeline-card.revealed .card-toggle {
+    transform: rotate(180deg);
+  }
+.activity-page .card-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+.activity-page .card-body-inner {
+    padding: 0 1.1rem 1rem;
+    border-top: 1px solid var(--border-light);
+    margin-top: 0;
+  }
+.activity-page .card-body-inner p {
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-top: 0.75rem;
+  }
+.activity-page .card-reflection {
+    margin-top: 0.85rem;
+    padding: 0.7rem 0.85rem;
+    border-radius: var(--radius);
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.55;
+  }
+.activity-page .timeline-card[data-phase="before"] .card-reflection { background: var(--accent-before-bg); color: var(--accent-before); }
+.activity-page .timeline-card[data-phase="during"] .card-reflection { background: var(--accent-during-bg); color: var(--accent-during); }
+.activity-page .timeline-card[data-phase="after"] .card-reflection { background: var(--accent-after-bg); color: var(--accent-after); }
+.activity-page .card-reflection::before {
+    content: "💬 ";
+    font-size: 0.75rem;
+  }
+/* ─── REFLECTION SECTION ─── */
+.activity-page .reflection-section {
+    margin-top: 2.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    display: none;
+  }
+.activity-page .reflection-section.visible { display: block; }
+.activity-page .reflection-section h2 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+.activity-page .reflection-section .reflection-intro {
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+  }
+.activity-page .reflection-questions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+.activity-page .reflection-q {
+    background: var(--bg);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 1rem;
+  }
+.activity-page .reflection-q .q-number {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.3rem;
+  }
+.activity-page .reflection-q .q-text {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.45;
+    margin-bottom: 0.6rem;
+  }
+.activity-page .reflection-q textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.6rem 0.75rem;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: var(--text-primary);
+    resize: vertical;
+    min-height: 60px;
+    background: var(--bg-card);
+    transition: border-color 0.2s;
+  }
+.activity-page .reflection-q textarea:focus {
+    outline: none;
+    border-color: var(--accent-after);
+    box-shadow: 0 0 0 3px rgba(43,90,131,0.08);
+  }
+.activity-page .reflection-q textarea::placeholder {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+/* ─── SELF-CHECK ─── */
+.activity-page .self-check {
+    margin-top: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    display: none;
+  }
+.activity-page .self-check.visible { display: block; }
+.activity-page .self-check h2 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+.activity-page .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+.activity-page .check-item:last-child { border-bottom: none; }
+.activity-page .check-item input[type="checkbox"] {
+    margin-top: 0.2rem;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--green);
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+.activity-page .check-item label {
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    line-height: 1.5;
+  }
+.activity-page .check-item input:checked + label {
+    color: var(--green);
+  }
+/* ─── FOOTER ─── */
+.activity-page footer {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+/* ─── ANIMATIONS ─── */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+.activity-page .timeline-card {
+    opacity: 0;
+    animation: fadeInUp 0.35s ease forwards;
+  }
+/* ─── RESPONSIVE ─── */
+@media (max-width: 600px) {.activity-page .page-container { padding: 1.25rem 1rem 3rem; }
+.activity-page header { padding: 1.5rem 0.5rem 1.25rem; }
+.activity-page .card-header { padding: 0.75rem 0.85rem; }
+.activity-page .card-body-inner { padding: 0 0.85rem 0.85rem; }
+.activity-page .meta-bar { gap: 0.75rem; }
+.activity-page .phase-tab { font-size: 0.7rem; padding: 0.7rem 0.25rem; }}
+
+.activity-page {
+  --bg: var(--warm);
+  --bg-card: var(--white);
+  --text-primary: var(--ink);
+  --text-secondary: var(--charcoal);
+  --text-muted: var(--muted);
+  --border: var(--line);
+  --border-light: var(--green-100);
+  --green: var(--green-800);
+  --green-bg: var(--green-50);
+  --accent-before: #8b6914;
+  --accent-before-bg: #fff7df;
+  --accent-during: #9b2c2c;
+  --accent-during-bg: #fff3f1;
+  --accent-after: var(--green-800);
+  --accent-after-bg: var(--green-100);
+  --radius: var(--radius-sm);
+  --shadow-sm: var(--shadow-card);
+  --shadow-md: var(--shadow-soft);
+  --shadow-lg: var(--shadow-soft);
+}
+
+.activity-page .activity-back {
+  width: min(100% - 2.5rem, 900px);
+  margin: 0 auto 1.25rem;
+}
+
+.activity-page > .container,
+.activity-page > .page-container {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+  background: var(--white);
+}
+
+.activity-page header h1,
+.activity-page h1,
+.activity-page h2,
+.activity-page h3,
+.activity-page .section-title,
+.activity-page .card-title,
+.activity-page .q-text,
+.activity-page .out-heading {
+  font-family: var(--font-heading);
+  letter-spacing: 0;
+}
+
+.activity-page header .activity-label,
+.activity-page .activity-label {
+  color: var(--green-800);
+}
+
+.activity-page textarea,
+.activity-page input[type="text"],
+.activity-page input[type="search"] {
+  border-radius: var(--radius-sm);
+}
+
+.activity-page .btn,
+.activity-page button.btn,
+.activity-page .check-btn {
+  border-radius: 999px;
+}
+
+.activity-page .btn-primary,
+.activity-page .btn:not(.btn-outline):not(.btn-secondary):not(.secondary),
+.activity-page .check-btn {
+  background: var(--green-800);
+  color: var(--white);
+}
+
+.activity-page .btn-primary:hover,
+.activity-page .btn:not(.btn-outline):not(.btn-secondary):not(.secondary):hover,
+.activity-page .check-btn:hover {
+  background: var(--green-950);
+}
+
+.activity-page .btn-secondary,
+.activity-page .btn.secondary,
+.activity-page .btn-outline {
+  background: var(--green-50);
+  border: 1px solid var(--line-strong);
+  color: var(--green-900);
+}
+
+.activity-page .btn-secondary:hover,
+.activity-page .btn.secondary:hover,
+.activity-page .btn-outline:hover {
+  background: var(--green-100);
+  color: var(--green-950);
+}
+
+@media (max-width: 600px) {
+  .activity-page .activity-back {
+    width: min(100% - 2rem, 900px);
+  }
+}
+
+  </style>
+</head>
+<body class="page-activity page-activity-grenfell-timeline-activity">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../" aria-label="The Grenfell Curriculum home">
+      <span class="brand-title">The Grenfell Curriculum</span>
+      <span class="brand-tagline">Memory, justice and education after Grenfell</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" data-nav-toggle>
+      <span>Menu</span><span aria-hidden="true"></span>
+    </button>
+    <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
+      <ul><li><a href="../../">Home</a></li><li><a href="../../about/">About</a></li><li><a href="../../principles/">Principles</a></li><li><a href="../../cpd/">CPD</a></li><li><a href="../../resources/" aria-current="page">Resources</a></li><li><a href="../../contact/">Contact</a></li></ul>
+    </nav>
+  </div>
+</header>
+  <main id="main" class="activity-page activity-grenfell-timeline-activity">
+    <div class="activity-back"><a class="btn secondary" href="../../resources/#repository">← Back to resources</a></div>
+<div class="page-container">
+<!-- ─── HEADER ─── -->
+<header>
+<div class="activity-label">Learning Activity · 10 minutes</div>
+<h1>Grenfell Tower: A Timeline of Failures</h1>
+<p class="subtitle">Explore the key failures before, during and after the Grenfell Tower fire of 14 June 2017, in which 72 people lost their lives.</p>
+<div class="meta-bar">
+<span>Self-paced</span>
+<span>14 events</span>
+</div>
+</header>
+<!-- ─── INSTRUCTIONS ─── -->
+<div class="instructions">
+<h2>How this works</h2>
+<p>Use the three phase tabs to move between <strong>Before</strong>, <strong>During</strong> and <strong>After</strong> the fire. Click each event to expand it and read about the failure. A reflection prompt accompanies each entry. Once you have explored all events, a final reflection section will appear at the bottom.</p>
+</div>
+<!-- ─── PROGRESS ─── -->
+<div class="progress-section">
+<div class="progress-bar-container">
+<div class="progress-bar-fill" id="progressFill"></div>
+</div>
+<div class="progress-text" id="progressText">0 of 14 explored</div>
+</div>
+<!-- ─── PHASE TABS ─── -->
+<div class="phase-tabs">
+<button class="phase-tab active" data-phase="before">Before <span class="tab-count">5</span></button>
+<button class="phase-tab" data-phase="during">During <span class="tab-count">4</span></button>
+<button class="phase-tab" data-phase="after">After <span class="tab-count">5</span></button>
+</div>
+<!-- ─── TIMELINE CONTENT ─── -->
+<div class="timeline-section" id="timelineSection">
+<!-- Populated by JS -->
+</div>
+<!-- ─── REFLECTION ─── -->
+<div class="reflection-section" id="reflectionSection">
+<h2>Final Reflection</h2>
+<p class="reflection-intro">You have explored all 14 events. Take a few minutes to consider the following questions. You can type notes below — they are not submitted anywhere and exist only in your current session.</p>
+<div class="reflection-questions">
+<div class="reflection-q">
+<div class="q-number">Question 1</div>
+<div class="q-text">The Inquiry concluded the fire was the result of "decades of failure" by government and industry. Which failures do you think were most preventable, and why?</div>
+<textarea placeholder="Type your thoughts here…"></textarea>
+</div>
+<div class="reflection-q">
+<div class="q-number">Question 2</div>
+<div class="q-text">What patterns or recurring themes do you notice across the Before, During and After phases?</div>
+<textarea placeholder="Type your thoughts here…"></textarea>
+</div>
+<div class="reflection-q">
+<div class="q-number">Question 3</div>
+<div class="q-text">What does this timeline suggest about the relationship between cost-cutting, deregulation and public safety?</div>
+<textarea placeholder="Type your thoughts here…"></textarea>
+</div>
+</div>
+</div>
+<!-- ─── SELF-CHECK ─── -->
+<div class="self-check" id="selfCheck">
+<h2>Self-check: Can you identify…</h2>
+<div class="check-item">
+<input id="sc1" type="checkbox"/><label for="sc1">At least two ways the building's fire safety was compromised before the fire</label>
+</div>
+<div class="check-item">
+<input id="sc2" type="checkbox"/><label for="sc2">Why the "stay put" advice became dangerous on the night</label>
+</div>
+<div class="check-item">
+<input id="sc3" type="checkbox"/><label for="sc3">The role that cost and deregulation played in creating the conditions for the fire</label>
+</div>
+<div class="check-item">
+<input id="sc4" type="checkbox"/><label for="sc4">At least two ways the response after the fire has been criticised as inadequate</label>
+</div>
+<div class="check-item">
+<input id="sc5" type="checkbox"/><label for="sc5">Why residents' warnings before the fire went unheeded</label>
+</div>
+</div>
+<!-- ─── FOOTER ─── -->
+
+</div>
+  </main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h2>The Grenfell Curriculum</h2>
+        <p>Memory, justice and education after Grenfell.</p>
+        <p><strong>General enquiries:</strong> <a href="mailto:teachgrenfell@soton.ac.uk">teachgrenfell@soton.ac.uk</a></p>
+      </div>
+      <div>
+        <h3>Site links</h3>
+        <ul class="footer-links">
+          <li><a href="../../about/">About the project</a></li>
+          <li><a href="../../principles/">Principles</a></li>
+          <li><a href="../../cpd/">Teacher CPD</a></li>
+          <li><a href="../../resources/">Open resources</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Statements</h3>
+        <ul class="footer-links">
+          <li><a href="../../contact/#accessibility">Accessibility</a></li>
+          <li><a href="../../contact/#privacy">Privacy</a></li>
+          <li><a href="../../contact/#copyright">Copyright</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 The Grenfell Curriculum</p>
+    </div>
+  </div>
+</footer>
+<script>
+const TIMELINE_DATA = {
+  before: {
+    intro: "The Grenfell Tower fire did not happen in isolation. It was preceded by decades of missed warnings, deregulation, cost-cutting, and the systematic dismissal of residents' concerns.",
+    events: [
+      {
+        date: "1991–2017",
+        title: "Decades of ignored warnings about combustible cladding",
+        body: "From the Knowsley Heights fire in 1991 onwards, there were repeated opportunities for government to identify the risks of combustible cladding on high-rise buildings. A parliamentary select committee warned in 1999 that the government should not wait for a serious fire before acting. The government failed to act on this or subsequent warnings, including fires overseas that demonstrated the dangers of ACM panels.",
+        reflection: "Why might warnings about low-probability but high-consequence risks be repeatedly ignored?"
+      },
+      {
+        date: "2009–2013",
+        title: "Lessons of Lakanal House not implemented",
+        body: "In 2009, six people died in a fire at Lakanal House in Southwark — a building with compromised compartmentation. The coroner wrote to the government calling for urgent action on building regulations and 'stay put' guidance. The review of Approved Document B (the key fire safety guidance) was repeatedly delayed and ultimately never completed before Grenfell. A key civil servant acknowledged there were multiple occasions when he could potentially have prevented the disaster.",
+        reflection: "What does the failure to learn from Lakanal House suggest about institutional memory and accountability?"
+      },
+      {
+        date: "2014–2016",
+        title: "Refurbishment with combustible cladding chosen on cost grounds",
+        body: "The 2012–2016 refurbishment of Grenfell Tower used ACM (aluminium composite material) cladding with a polyethylene core — a combustible material — partly because it was cheaper than alternatives such as zinc. The contractor found that choosing ACM over zinc could save around half a million pounds. The Inquiry found that cladding and insulation manufacturers had in some cases concealed or manipulated fire test data.",
+        reflection: "How should competing pressures of cost and safety be managed in public building projects?"
+      },
+      {
+        date: "2015–2017",
+        title: "Fire doors and self-closers left defective despite warnings",
+        body: "The London Fire Brigade issued deficiency notices about non-functioning self-closing devices on flat entrance doors. The Kensington and Chelsea TMO (Tenant Management Organisation) refused to fund timely repairs, describing the cost as too great. After the fire, 43 of 129 front doors had no self-closers and 34 had non-working ones. The new fire doors installed in 2011–12 did not meet the required fire resistance standard because the TMO had failed to specify the correct standard when ordering them.",
+        reflection: "What does this tell us about the gap between regulation on paper and enforcement in practice?"
+      },
+      {
+        date: "Nov 2016",
+        title: "Residents' blog warned a serious fire was coming",
+        body: "The Grenfell Action Group, a residents' organisation, published a blog post stating it would take a serious fire and loss of life before anything was done about building management. Residents had raised concerns about condemned fire extinguishers, broken lifts, and missing fire safety notices. The TMO treated fire safety complaints as an inconvenience rather than an essential duty. No adequate system existed for ensuring defects were remedied in good time.",
+        reflection: "What happens when the people with the most direct knowledge of risk have the least institutional power?"
+      }
+    ]
+  },
+  during: {
+    intro: "On the night of 14 June 2017, a fire started in a faulty fridge-freezer on the fourth floor shortly before 1 a.m. Within minutes, it had spread to the combustible cladding. What followed exposed critical failures in emergency response.",
+    events: [
+      {
+        date: "00:54–01:30",
+        title: "Fire escapes the flat and engulfs the cladding",
+        body: "The fire broke out of the kitchen window and ignited the ACM cladding. Within 30 minutes, flames had reached the roof — climbing 19 storeys in approximately 12 minutes. The fire then spread horizontally and down the other sides of the building. The cladding system, including combustible insulation, acted as fuel. The compartmentation designed to contain the fire to a single flat was bypassed entirely.",
+        reflection: "The building's design assumed fire could be contained within a single flat. What does it mean when a core safety assumption fails?"
+      },
+      {
+        date: "01:00–02:47",
+        title: "'Stay put' advice maintained for nearly two hours",
+        body: "The 'stay put' policy — advising residents to remain in their flats during a fire — was maintained until 2:47 a.m., nearly two hours after the first 999 call. The Inquiry found that the policy had become an 'article of faith' within the London Fire Brigade. Incident commanders had never been trained to implement a building evacuation. One expert estimated it would have taken just seven minutes for all 293 residents to walk down the stairs in the early stages, when the stairwell was still clear.",
+        reflection: "When does adherence to established procedure become a failure of professional judgement?"
+      },
+      {
+        date: "02:35 a.m.",
+        title: "Control room overwhelmed; advice change not immediately followed",
+        body: "Even after a senior officer instructed call handlers to tell residents to leave, five separate call handlers continued giving 'stay put' advice in the minutes that followed. The LFB had not provided structured training on handling multiple simultaneous fire survival guidance calls. The control room's TV was turned off; a senior firefighter only saw the scale of the fire when he went downstairs and saw Sky News. The communication equipment also functioned inadequately in the concrete building.",
+        reflection: "What does this reveal about the difference between a policy changing on paper and changing in practice during a crisis?"
+      },
+      {
+        date: "Through the night",
+        title: "Disabled residents left without evacuation plans",
+        body: "37 of the occupants present during the fire had a disability that meant they could not evacuate unaided. No personal emergency evacuation plans (PEEPs) were in place. By the next day, 15 of those 37 had died. The fire was later described as a 'landmark act of discrimination' against disabled people. National guidance had advised that evacuation plans for disabled residents in general needs housing were 'usually unrealistic' — a position that disability groups had not been consulted on.",
+        reflection: "What does this failure reveal about whose safety is centred — and whose is treated as secondary — in building safety policy?"
+      }
+    ]
+  },
+  after: {
+    intro: "The aftermath of Grenfell exposed a national crisis of building safety, a deeply inadequate response to survivors and bereaved families, and a slow reckoning across government and industry.",
+    events: [
+      {
+        date: "14 June 2017 onwards",
+        title: "Survivors and bereaved families abandoned by the authorities",
+        body: "The Inquiry found that the response of government and RBKC in the first week was 'muddled, slow, indecisive and piecemeal' and showed a 'marked lack of respect for human decency and dignity.' Survivors who had lost everything were placed in hotel rooms with no follow-up contact for days. Families — including those with disabilities and young children — were housed in unsuitable accommodation. The council had no system for tracking who needed help; paper forms were left scattered around rest centres. Bereaved relatives searching for loved ones described being treated aggressively by police and threatened with arrest. Meanwhile, the council's chief executive refused to request outside help, saying it would look like they could not cope. Internal government documents described grieving residents as 'embittered' and accused them of trying to 'incite a mob.' Many residents who were observing Ramadan at the time were left without regard for their cultural and religious needs. Where the state failed, local community organisations — the Rugby Portobello Trust, Al-Manaar Mosque, local churches and volunteers — stepped in to provide basic humanitarian support, from clothing and food to counselling and cash.",
+        reflection: "What does the contrast between the community response and the official response tell us about who was treated as worthy of care — and who was not?"
+      },
+      {
+        date: "June 2017 onwards",
+        title: "National cladding crisis revealed: hundreds of buildings affected",
+        body: "In the weeks after the fire, the government set up a testing service for cladding samples. Every single one of the first 120 samples sent in failed. Hundreds of buildings across the country were found to have dangerous cladding. Camden Council evacuated over 700 flats overnight from blocks with the same materials. The government initially suppressed details of which buildings were affected, citing national security. Remediation costs have been estimated at over £16 billion.",
+        reflection: "Why did it take a disaster of this scale for the extent of the cladding problem to be acknowledged?"
+      },
+      {
+        date: "2018–2022",
+        title: "Leaseholders trapped in unsellable, unsafe flats",
+        body: "Private flat owners found themselves financially liable for cladding remediation they had not caused — with bills sometimes reaching six figures. Insurance premiums rose by over 1,000% in extreme cases. Flats became unsellable as mortgage lenders refused to lend on affected buildings. The government initially offered no funding for private buildings and told building owners to 'do the right thing.' Campaign groups such as End Our Cladding Scandal and Grenfell United pushed for change over several years of sustained activism.",
+        reflection: "What does the leaseholder crisis reveal about how the costs of regulatory failure are distributed in society?"
+      },
+      {
+        date: "2022–2025",
+        title: "Building Safety Act and ongoing remediation gaps",
+        body: "The Building Safety Act 2022 introduced new resident protections and banned leaseholders from paying for unsafe cladding removal. ACM cladding was banned on new high-rises from late 2018. However, by February 2025, around 2,000 social housing buildings still had not been remediated, with nearly 500 having no remediation plan at all. The government accepted 49 of the Inquiry's 58 recommendations in full, with 9 accepted only 'in principle.' The government also reversed its commitment to personal emergency evacuation plans for disabled residents, despite overwhelming public consultation support.",
+        reflection: "What is the difference between accepting recommendations and implementing meaningful change?"
+      },
+      {
+        date: "2024–ongoing",
+        title: "Inquiry complete, but criminal proceedings still pending",
+        body: "The Grenfell Tower Inquiry published its Phase 2 report in September 2024, finding that the fire was the result of decades of failure by government and industry — driven in most cases by incompetence, but in some cases by dishonesty and greed. Seven firms face possible debarment from public contracts. The Metropolitan Police investigation into potential offences including corporate manslaughter is not expected to conclude before late 2026. Several companies named in the Inquiry have disputed aspects of the findings.",
+        reflection: "Eight years after the fire, what does the pace of accountability suggest about the systems meant to deliver justice?"
+      }
+    ]
+  }
+};
+
+let revealedSet = new Set();
+let currentPhase = 'before';
+const totalEvents = 14;
+
+function renderTimeline(phase) {
+  currentPhase = phase;
+  const section = document.getElementById('timelineSection');
+  const data = TIMELINE_DATA[phase];
+
+  // Update tabs
+  document.querySelectorAll('.phase-tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.phase === phase);
+  });
+
+  let html = `<p class="timeline-phase-intro">${data.intro}</p><div class="timeline-list">`;
+
+  data.events.forEach((evt, i) => {
+    const id = `${phase}-${i}`;
+    const isRevealed = revealedSet.has(id);
+    html += `
+      <div class="timeline-card ${isRevealed ? 'revealed' : ''}" data-phase="${phase}" data-id="${id}" style="animation-delay: ${i * 0.07}s">
+        <div class="timeline-dot"></div>
+        <div class="card-inner">
+          <div class="card-header" onclick="toggleCard('${id}')">
+            <div class="card-date">${evt.date}</div>
+            <div class="card-title-area">
+              <div class="card-title">${evt.title}</div>
+            </div>
+            <div class="card-toggle">▾</div>
+          </div>
+          <div class="card-body" id="body-${id}">
+            <div class="card-body-inner">
+              <p>${evt.body}</p>
+              <div class="card-reflection">${evt.reflection}</div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  });
+
+  html += '</div>';
+  section.innerHTML = html;
+
+  // Re-open any already-revealed cards
+  revealedSet.forEach(id => {
+    if (id.startsWith(phase)) {
+      const body = document.getElementById(`body-${id}`);
+      if (body) body.style.maxHeight = body.scrollHeight + 'px';
+    }
+  });
+}
+
+function toggleCard(id) {
+  const card = document.querySelector(`[data-id="${id}"]`);
+  const body = document.getElementById(`body-${id}`);
+  if (!card || !body) return;
+
+  const isOpen = card.classList.contains('revealed');
+
+  if (isOpen) {
+    body.style.maxHeight = '0';
+    card.classList.remove('revealed');
+  } else {
+    revealedSet.add(id);
+    card.classList.add('revealed');
+    body.style.maxHeight = body.scrollHeight + 'px';
+    updateProgress();
+  }
+}
+
+function updateProgress() {
+  const count = revealedSet.size;
+  const pct = Math.round((count / totalEvents) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressText').textContent = `${count} of ${totalEvents} explored`;
+
+  if (count >= totalEvents) {
+    document.getElementById('reflectionSection').classList.add('visible');
+    document.getElementById('selfCheck').classList.add('visible');
+  }
+}
+
+// Tab clicks
+document.querySelectorAll('.phase-tab').forEach(tab => {
+  tab.addEventListener('click', () => renderTimeline(tab.dataset.phase));
+});
+
+// Init
+renderTimeline('before');
+</script>
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>

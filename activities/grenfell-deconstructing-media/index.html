@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deconstructing Disaster Narratives | The Grenfell Curriculum</title>
+  <meta name="description" content="An online activity comparing media responses to Hillsborough and Grenfell, helping users identify victim-blaming, institutional protection and systemic failure in disaster narratives.">
+  <meta name="theme-color" content="#008a59">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+  <style>
+.activity-page {
+            --bg: #FAF8F5;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #4A4A4A;
+            --text-muted: #7A7A7A;
+            --border: #E0DCD6;
+            --border-light: #EDEBE7;
+            --accent-before: #8B6914;
+            --accent-before-bg: #FDF6E3;
+            --accent-during: #9B2C2C;
+            --accent-during-bg: #FFF5F5;
+            --accent-after: #2B5A83;
+            --accent-after-bg: #EFF6FF;
+            --green: #2D6A4F;
+            --green-bg: #F0FFF4;
+            --incorrect-red: #9B2C2C;
+            --incorrect-bg: #FFF5F5;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --radius: 6px;
+        }
+.activity-page * { margin: 0; padding: 0; box-sizing: border-box; }
+.activity-page {
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg);
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            -webkit-font-smoothing: antialiased;
+        }
+/* ─── MAIN CARD CONTAINER ─── */
+.activity-page .container {
+            background: var(--bg-card);
+            width: 100%;
+            max-width: 820px;
+            min-height: 580px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            margin-bottom: 2rem; /* Space between card and footer */
+        }
+/* ─── HEADER ─── */
+.activity-page header {
+            background-color: var(--bg-card);
+            padding: 2rem 2rem 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+.activity-page header .activity-label {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.6rem;
+        }
+.activity-page h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.35rem, 3.5vw, 1.7rem);
+            font-weight: 700;
+            line-height: 1.25;
+            color: var(--text-primary);
+            margin: 0;
+        }
+/* ─── PROGRESS BAR ─── */
+.activity-page .progress-container {
+            background-color: var(--border-light);
+            height: 6px;
+            width: 100%;
+        }
+.activity-page .progress-bar {
+            background: linear-gradient(90deg, var(--accent-before), var(--accent-during), var(--accent-after));
+            height: 100%;
+            width: 33%;
+            transition: width 0.45s ease;
+        }
+/* ─── CONTENT AREA ─── */
+.activity-page .content-area {
+            flex: 1;
+            padding: 2rem;
+            position: relative;
+        }
+.activity-page .page {
+            display: none;
+            animation: fadeInUp 0.4s ease;
+        }
+.activity-page .page.active {
+            display: block;
+        }
+@keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+.activity-page h2 {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.6rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+.activity-page .content-area p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 0.75rem;
+        }
+.activity-page .content-area strong {
+            color: var(--text-primary);
+        }
+.activity-page .content-area em {
+            font-style: italic;
+        }
+/* ─── TIMELINE CARDS (Page 1) ─── */
+.activity-page .timeline-box {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.25rem;
+            flex-wrap: wrap;
+        }
+.activity-page .timeline-card {
+            flex: 1;
+            background: var(--bg);
+            padding: 1.1rem 1.25rem;
+            border-left: 3px solid var(--accent-after);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            min-width: 240px;
+            border-top: 1px solid var(--border-light);
+            border-right: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+.activity-page .timeline-card h3 {
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+.activity-page .timeline-card p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.4rem;
+            line-height: 1.55;
+        }
+.activity-page .timeline-card ul {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            padding-left: 1.1rem;
+            margin: 0;
+            line-height: 1.65;
+        }
+.activity-page .timeline-card ul li {
+            margin-bottom: 0.2rem;
+        }
+.activity-page .timeline-card-grenfell {
+            border-left-color: var(--accent-during);
+        }
+/* ─── REFLECTION BOX ─── */
+.activity-page .reflection-box {
+            margin-top: 1.25rem;
+            background: var(--accent-before-bg);
+            padding: 1rem 1.15rem;
+            border-radius: var(--radius);
+            border-left: 3px solid var(--accent-before);
+            font-size: 0.84rem;
+            color: var(--accent-before);
+            line-height: 1.6;
+        }
+/* ─── QUIZ (Page 2) ─── */
+.activity-page .quiz-question {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 1.1rem 1.25rem;
+            margin-bottom: 1rem;
+            border-radius: var(--radius);
+        }
+.activity-page .quiz-question strong {
+            font-family: var(--font-heading);
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 0.5rem;
+            line-height: 1.45;
+        }
+.activity-page .quiz-options label {
+            display: block;
+            margin: 0.45rem 0;
+            cursor: pointer;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+.activity-page .quiz-options input[type="radio"] {
+            accent-color: var(--accent-after);
+            margin-right: 0.4rem;
+            vertical-align: middle;
+        }
+.activity-page .check-btn {
+            margin-top: 0.6rem;
+            padding: 0.35rem 0.85rem;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+.activity-page .check-btn:hover {
+            background: var(--border-light);
+            color: var(--text-primary);
+        }
+.activity-page .feedback {
+            margin-top: 0.65rem;
+            padding: 0.7rem 0.9rem;
+            border-radius: var(--radius);
+            font-size: 0.8rem;
+            line-height: 1.55;
+            display: none;
+        }
+.activity-page .correct {
+            background-color: var(--green-bg);
+            color: var(--green);
+        }
+.activity-page .incorrect {
+            background-color: var(--incorrect-bg);
+            color: var(--incorrect-red);
+        }
+/* ─── DISCUSSION / TEXTAREA (Page 3) ─── */
+.activity-page .scenario-box {
+            background-color: var(--bg);
+            padding: 1rem 1.15rem;
+            border: 1px dashed var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            font-size: 0.84rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+.activity-page .scenario-box strong {
+            color: var(--text-primary);
+        }
+.activity-page textarea {
+            width: 100%;
+            height: 120px;
+            padding: 0.75rem 0.9rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-family: var(--font-sans);
+            font-size: 0.84rem;
+            line-height: 1.55;
+            color: var(--text-primary);
+            background: var(--bg-card);
+            resize: vertical;
+            transition: border-color 0.2s;
+        }
+.activity-page textarea:focus {
+            outline: none;
+            border-color: var(--accent-after);
+            box-shadow: 0 0 0 3px rgba(43,90,131,0.08);
+        }
+/* ─── CARD NAVIGATION BAR ─── */
+.activity-page .card-nav {
+            border-top: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--bg);
+            margin-top: auto; /* Pushes to bottom of flex container */
+        }
+.activity-page #pageIndicator {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+        }
+.activity-page .btn {
+            padding: 0.55rem 1.25rem;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            transition: all 0.2s;
+        }
+.activity-page .btn-primary {
+            background-color: var(--accent-after);
+            color: white;
+        }
+.activity-page .btn-primary:hover {
+            background-color: #1F4A6E;
+        }
+.activity-page .btn-secondary {
+            background-color: var(--border-light);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+.activity-page .btn-secondary:hover {
+            background-color: var(--border);
+            color: var(--text-primary);
+        }
+.activity-page .btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+/* ─── SITE FOOTER (OUTSIDE CARD) ─── */
+.activity-page .site-footer {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            width: 100%;
+            max-width: 820px;
+            padding-bottom: 1rem;
+        }
+/* ─── RESPONSIVE ─── */
+@media (max-width: 600px) {.activity-page { padding: 1rem; }
+.activity-page header { padding: 1.5rem 1.25rem 1.25rem; }
+.activity-page .content-area { padding: 1.25rem; }
+.activity-page .card-nav { padding: 0.85rem 1.25rem; }
+.activity-page .timeline-box { flex-direction: column; }}
+
+.activity-page {
+  --bg: var(--warm);
+  --bg-card: var(--white);
+  --text-primary: var(--ink);
+  --text-secondary: var(--charcoal);
+  --text-muted: var(--muted);
+  --border: var(--line);
+  --border-light: var(--green-100);
+  --green: var(--green-800);
+  --green-bg: var(--green-50);
+  --accent-before: #8b6914;
+  --accent-before-bg: #fff7df;
+  --accent-during: #9b2c2c;
+  --accent-during-bg: #fff3f1;
+  --accent-after: var(--green-800);
+  --accent-after-bg: var(--green-100);
+  --radius: var(--radius-sm);
+  --shadow-sm: var(--shadow-card);
+  --shadow-md: var(--shadow-soft);
+  --shadow-lg: var(--shadow-soft);
+}
+
+.activity-page .activity-back {
+  width: min(100% - 2.5rem, 900px);
+  margin: 0 auto 1.25rem;
+}
+
+.activity-page > .container,
+.activity-page > .page-container {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+  background: var(--white);
+}
+
+.activity-page header h1,
+.activity-page h1,
+.activity-page h2,
+.activity-page h3,
+.activity-page .section-title,
+.activity-page .card-title,
+.activity-page .q-text,
+.activity-page .out-heading {
+  font-family: var(--font-heading);
+  letter-spacing: 0;
+}
+
+.activity-page header .activity-label,
+.activity-page .activity-label {
+  color: var(--green-800);
+}
+
+.activity-page textarea,
+.activity-page input[type="text"],
+.activity-page input[type="search"] {
+  border-radius: var(--radius-sm);
+}
+
+.activity-page .btn,
+.activity-page button.btn,
+.activity-page .check-btn {
+  border-radius: 999px;
+}
+
+.activity-page .btn-primary,
+.activity-page .btn:not(.btn-outline):not(.btn-secondary):not(.secondary),
+.activity-page .check-btn {
+  background: var(--green-800);
+  color: var(--white);
+}
+
+.activity-page .btn-primary:hover,
+.activity-page .btn:not(.btn-outline):not(.btn-secondary):not(.secondary):hover,
+.activity-page .check-btn:hover {
+  background: var(--green-950);
+}
+
+.activity-page .btn-secondary,
+.activity-page .btn.secondary,
+.activity-page .btn-outline {
+  background: var(--green-50);
+  border: 1px solid var(--line-strong);
+  color: var(--green-900);
+}
+
+.activity-page .btn-secondary:hover,
+.activity-page .btn.secondary:hover,
+.activity-page .btn-outline:hover {
+  background: var(--green-100);
+  color: var(--green-950);
+}
+
+@media (max-width: 600px) {
+  .activity-page .activity-back {
+    width: min(100% - 2rem, 900px);
+  }
+}
+
+  </style>
+</head>
+<body class="page-activity page-activity-grenfell-deconstructing-media">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../" aria-label="The Grenfell Curriculum home">
+      <span class="brand-title">The Grenfell Curriculum</span>
+      <span class="brand-tagline">Memory, justice and education after Grenfell</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" data-nav-toggle>
+      <span>Menu</span><span aria-hidden="true"></span>
+    </button>
+    <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
+      <ul><li><a href="../../">Home</a></li><li><a href="../../about/">About</a></li><li><a href="../../principles/">Principles</a></li><li><a href="../../cpd/">CPD</a></li><li><a href="../../resources/" aria-current="page">Resources</a></li><li><a href="../../contact/">Contact</a></li></ul>
+    </nav>
+  </div>
+</header>
+  <main id="main" class="activity-page activity-grenfell-deconstructing-media">
+    <div class="activity-back"><a class="btn secondary" href="../../resources/#repository">← Back to resources</a></div>
+<div class="container">
+<header>
+<div class="activity-label">Learning Activity · 8 minutes</div>
+<h1>Deconstructing Disaster Narratives</h1>
+</header>
+<div class="progress-container">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+<div class="content-area">
+<div class="page active" id="page1">
+<h2>Part 1: The Timeline of Justice</h2>
+<p><strong>Context:</strong> The media responses to Hillsborough (1989) and Grenfell Tower (2017) reveal systemic failures in journalism that extended institutional culpability and delayed justice.</p>
+<div class="timeline-box">
+<div class="timeline-card">
+<h3>Hillsborough (1989)</h3>
+<p><strong>Pattern: Post-Disaster Falsehoods</strong></p>
+<p>The failure happened <em>immediately after</em> the event.</p>
+<ul>
+<li><strong>Day 4:</strong> <em>The Sun</em> publishes "The Truth" (police lies).</li>
+<li><strong>23 Years Later:</strong> Media apology (2012).</li>
+<li><strong>27 Years Later:</strong> Inquest Verdict (2016).</li>
+</ul>
+</div>
+<div class="timeline-card timeline-card-grenfell">
+<h3>Grenfell (2017)</h3>
+<p><strong>Pattern: Pre-Disaster Silence</strong></p>
+<p>The failure happened <em>before</em> the event.</p>
+<ul>
+<li><strong>2013–2017:</strong> Residents' warnings ignored by media.</li>
+<li><strong>Day 2:</strong> Media blames individual resident's fridge.</li>
+<li><strong>7+ Years Later:</strong> Criminal prosecutions pending.</li>
+</ul>
+</div>
+</div>
+<div class="reflection-box">
+<strong>Reflection Point:</strong> Notice that while the timing differed, the result was the same: <em>Institutional protection and victim blaming.</em>
+</div>
+</div>
+<div class="page" id="page2">
+<h2>Part 2: Spot the Systemic Failure</h2>
+<p>Test your understanding of the reading materials.</p>
+<div class="quiz-question" id="q1">
+<strong>1. The "Truth" Headline (Hillsborough): What was the primary institutional cause of this failure?</strong>
+<div class="quiz-options">
+<label><input name="q1" type="radio" value="A"/> The journalist had a personal grudge against Liverpool.</label>
+<label><input name="q1" type="radio" value="B"/> Uncritical reliance on anonymous senior police sources without verification.</label>
+<label><input name="q1" type="radio" value="C"/> A printing error at the press agency.</label>
+</div>
+<button class="check-btn" onclick="checkAnswer('q1', 'B', 'Correct. Journalists accepted official accounts without basic investigative work.')">Check Answer</button>
+<div class="feedback" id="q1-feedback"></div>
+</div>
+<div class="quiz-question" id="q2">
+<strong>2. The "Faulty Fridge" (Grenfell): Focusing on the fridge represents which media trope?</strong>
+<div class="quiz-options">
+<label><input name="q2" type="radio" value="A"/> Individualising blame to deflect from system/corporate failure.</label>
+<label><input name="q2" type="radio" value="B"/> Investigative rigour.</label>
+<label><input name="q2" type="radio" value="C"/> Promoting fire safety awareness.</label>
+</div>
+<button class="check-btn" onclick="checkAnswer('q2', 'A', 'Correct. It creates a scapegoat rather than examining deregulation or cladding.')">Check Answer</button>
+<div class="feedback" id="q2-feedback"></div>
+</div>
+<div class="quiz-question" id="q3">
+<strong>3. The Missing Warnings: Why were Grenfell Action Group blogs ignored before the fire?</strong>
+<div class="quiz-options">
+<label><input name="q3" type="radio" value="A"/> The blog was private and password-protected.</label>
+<label><input name="q3" type="radio" value="B"/> Structural decline in local press and marginalization of social housing residents.</label>
+<label><input name="q3" type="radio" value="C"/> The warnings were vague and unspecific.</label>
+</div>
+<button class="check-btn" onclick="checkAnswer('q3', 'B', 'Correct. Working-class concerns were not seen as newsworthy until tragedy struck.')">Check Answer</button>
+<div class="feedback" id="q3-feedback"></div>
+</div>
+</div>
+<div class="page" id="page3">
+<h2>Part 3: Pedagogical Application</h2>
+<p><strong>Scenario:</strong> You are teaching a lesson on current affairs. A student repeats a debunked narrative: <br/><em>"Well, the Grenfell fire was basically just caused by one guy's fridge."</em></p>
+<div class="scenario-box">
+<strong>Your Task:</strong> Draft a two-sentence response to that student to shift their thinking from <em>individual blame</em> to <em>systemic analysis</em>.
+            </div>
+<textarea id="teacherResponse" placeholder="Type your response here… (e.g., 'That was the initial report, but we need to ask: why did the fire spread so quickly once it started? Who was responsible for the materials on the outside of the building?')"></textarea>
+</div>
+</div>
+<div class="card-nav">
+<button class="btn btn-secondary" disabled="" id="prevBtn" onclick="changePage(-1)">Previous</button>
+<span id="pageIndicator">Step 1 of 3</span>
+<button class="btn btn-primary" id="nextBtn" onclick="changePage(1)">Next</button>
+</div>
+</div>
+  </main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h2>The Grenfell Curriculum</h2>
+        <p>Memory, justice and education after Grenfell.</p>
+        <p><strong>General enquiries:</strong> <a href="mailto:teachgrenfell@soton.ac.uk">teachgrenfell@soton.ac.uk</a></p>
+      </div>
+      <div>
+        <h3>Site links</h3>
+        <ul class="footer-links">
+          <li><a href="../../about/">About the project</a></li>
+          <li><a href="../../principles/">Principles</a></li>
+          <li><a href="../../cpd/">Teacher CPD</a></li>
+          <li><a href="../../resources/">Open resources</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Statements</h3>
+        <ul class="footer-links">
+          <li><a href="../../contact/#accessibility">Accessibility</a></li>
+          <li><a href="../../contact/#privacy">Privacy</a></li>
+          <li><a href="../../contact/#copyright">Copyright</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 The Grenfell Curriculum</p>
+    </div>
+  </div>
+</footer>
+<script>
+    let currentPage = 1;
+    const totalPages = 3;
+
+    function changePage(direction) {
+        document.getElementById(`page${currentPage}`).classList.remove('active');
+        currentPage += direction;
+        document.getElementById(`page${currentPage}`).classList.add('active');
+        updateUI();
+    }
+
+    function updateUI() {
+        const percentage = (currentPage / totalPages) * 100;
+        document.getElementById('progressBar').style.width = `${percentage}%`;
+        document.getElementById('pageIndicator').innerText = `Step ${currentPage} of ${totalPages}`;
+
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        prevBtn.disabled = (currentPage === 1);
+
+        if (currentPage === totalPages) {
+            nextBtn.innerText = "Finish";
+            nextBtn.onclick = function() { alert("Activity Complete! You may now close this module."); };
+            nextBtn.classList.replace('btn-primary', 'btn-secondary');
+        } else {
+            nextBtn.innerText = "Next";
+            nextBtn.onclick = function() { changePage(1); };
+            nextBtn.classList.replace('btn-secondary', 'btn-primary');
+        }
+    }
+
+    function checkAnswer(questionId, correctAnswer, explanation) {
+        const radios = document.getElementsByName(questionId);
+        let selectedValue;
+        for (const radio of radios) {
+            if (radio.checked) {
+                selectedValue = radio.value;
+                break;
+            }
+        }
+
+        const feedbackDiv = document.getElementById(questionId + '-feedback');
+        
+        if (selectedValue === correctAnswer) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.style.display = 'block';
+            feedbackDiv.innerText = explanation;
+        } else if (!selectedValue) {
+            alert("Please select an option.");
+        } else {
+            feedbackDiv.className = 'feedback incorrect';
+            feedbackDiv.style.display = 'block';
+            feedbackDiv.innerText = 'Incorrect. Try again.';
+        }
+    }
+</script>
+  <script src="../../assets/js/main.js" defer></script>
+</body>
+</html>
