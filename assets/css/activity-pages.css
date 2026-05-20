@@ -1192,3 +1192,35 @@ body.page-activity .activity-grenfell-moral-compass .range-labels .pos-5::before
     padding: 0 1rem 1rem !important;
   }
 }
+
+/* Deconstructing activity: align the radio/tick circle with the first line of option text. */
+body.page-activity .activity-grenfell-deconstructing-media .quiz-options label {
+  align-items: flex-start !important;
+}
+
+body.page-activity .activity-grenfell-deconstructing-media .quiz-options input[type="radio"] {
+  flex: 0 0 auto !important;
+  width: 1.1rem !important;
+  height: 1.1rem !important;
+  margin: 0.28rem 0 0 !important;
+  vertical-align: top !important;
+}
+
+/* Final Deconstructing activity option alignment: centre the radio control with the option text. */
+body.page-activity .activity-grenfell-deconstructing-media .quiz-options label {
+  align-items: center !important;
+}
+
+body.page-activity .activity-grenfell-deconstructing-media .quiz-options label span {
+  display: block !important;
+  flex: 1 1 auto !important;
+  line-height: 1.5 !important;
+}
+
+body.page-activity .activity-grenfell-deconstructing-media .quiz-options input[type="radio"] {
+  flex: 0 0 1rem !important;
+  width: 1rem !important;
+  height: 1rem !important;
+  margin: 0 !important;
+  transform: none !important;
+}
