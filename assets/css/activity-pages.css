@@ -1224,3 +1224,179 @@ body.page-activity .activity-grenfell-deconstructing-media .quiz-options input[t
   margin: 0 !important;
   transform: none !important;
 }
+
+/* Final moral compass slider alignment fix: align the visible bar, thumb, ticks and labels to the same five points. */
+body.page-activity .activity-grenfell-moral-compass .scenario-desc {
+  display: block !important;
+  max-width: 100% !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .slider-container {
+  --slider-edge: clamp(3.8rem, 7vw, 5.2rem);
+  --thumb-size: 1.6rem;
+  --thumb-half: 0.8rem;
+  --thumb-quarter: 0.4rem;
+  --slider-input-height: 1.8rem;
+  --slider-track-height: 0.55rem;
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 1rem 0 0 !important;
+  min-height: 6.7rem !important;
+  overflow: visible !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .slider-container::before {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 0 !important;
+  left: calc(var(--slider-edge) + var(--thumb-half)) !important;
+  right: calc(var(--slider-edge) + var(--thumb-half)) !important;
+  top: 1.625rem !important;
+  height: var(--slider-track-height) !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, #f5d77b 0%, #e8e0c8 50%, #9bc6e0 100%) !important;
+  pointer-events: none !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass input[type="range"] {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  position: relative !important;
+  z-index: 2 !important;
+  display: block !important;
+  width: calc(100% - (var(--slider-edge) * 2)) !important;
+  height: var(--slider-input-height) !important;
+  margin: 0 var(--slider-edge) !important;
+  padding: 0 !important;
+  background: transparent !important;
+  cursor: pointer !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass input[type="range"]::-webkit-slider-runnable-track {
+  height: var(--slider-track-height) !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  box-sizing: border-box !important;
+  width: var(--thumb-size) !important;
+  height: var(--thumb-size) !important;
+  margin-top: calc((var(--slider-track-height) - var(--thumb-size)) / 2) !important;
+  border-radius: 50% !important;
+  border: 3px solid #fff !important;
+  background: var(--green-800) !important;
+  box-shadow: 0 4px 12px rgba(3, 27, 18, 0.22) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass input[type="range"]::-moz-range-track {
+  height: var(--slider-track-height) !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass input[type="range"]::-moz-range-thumb {
+  box-sizing: border-box !important;
+  width: var(--thumb-size) !important;
+  height: var(--thumb-size) !important;
+  border-radius: 50% !important;
+  border: 3px solid #fff !important;
+  background: var(--green-800) !important;
+  box-shadow: 0 4px 12px rgba(3, 27, 18, 0.22) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels {
+  position: relative !important;
+  z-index: 1 !important;
+  display: block !important;
+  width: calc(100% - (var(--slider-edge) * 2)) !important;
+  height: 4.5rem !important;
+  margin: 0.45rem var(--slider-edge) 0 !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels span {
+  position: absolute !important;
+  top: 0 !important;
+  width: 8.4rem !important;
+  max-width: 8.4rem !important;
+  color: var(--muted) !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  line-height: 1.22 !important;
+  letter-spacing: 0 !important;
+  text-align: center !important;
+  transform: translateX(-50%) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels span::before {
+  content: "" !important;
+  display: block !important;
+  width: 2px !important;
+  height: 10px !important;
+  margin: 0 auto 0.45rem !important;
+  border-radius: 999px !important;
+  background: var(--green-800) !important;
+  opacity: 0.5 !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-1 {
+  left: var(--thumb-half) !important;
+  text-align: left !important;
+  transform: translateX(0) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-1::before {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-2 {
+  left: calc(25% + var(--thumb-quarter)) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-3 {
+  left: 50% !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-4 {
+  left: calc(75% - var(--thumb-quarter)) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-5 {
+  left: calc(100% - var(--thumb-half)) !important;
+  text-align: right !important;
+  transform: translateX(-100%) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-5::before {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+@media (max-width: 760px) {
+  body.page-activity .activity-grenfell-moral-compass .slider-container {
+    --slider-edge: 2.7rem;
+    --thumb-size: 1.45rem;
+    --thumb-half: 0.725rem;
+    --thumb-quarter: 0.3625rem;
+    min-height: 7.5rem !important;
+  }
+
+  body.page-activity .activity-grenfell-moral-compass .range-labels {
+    height: 5.4rem !important;
+  }
+
+  body.page-activity .activity-grenfell-moral-compass .range-labels span {
+    width: 5.9rem !important;
+    max-width: 5.9rem !important;
+    font-size: 0.72rem !important;
+  }
+}
