@@ -37,14 +37,14 @@ body.page-activity .activity-page {
   --shadow-sm: var(--shadow-card);
   --shadow-md: var(--shadow-soft);
   --radius: 18px;
-  --activity-max: 980px;
+  --activity-max: var(--max);
 
   display: block !important;
   align-items: initial !important;
   min-height: auto !important;
   width: 100%;
   margin: 0;
-  padding: clamp(1.2rem, 3vw, 2.6rem) 1rem clamp(3rem, 6vw, 5rem) !important;
+  padding: clamp(1.2rem, 3vw, 2.6rem) 0 clamp(3rem, 6vw, 5rem) !important;
   color: var(--text-primary);
   background:
     radial-gradient(circle at 8% 4%, rgba(19, 166, 107, 0.10), transparent 28rem),
@@ -58,9 +58,9 @@ body.page-activity .activity-page * {
 }
 
 body.page-activity .activity-back {
-  width: 100%;
-  max-width: var(--activity-max);
-  margin: 0 auto 1rem;
+  width: min(100% - 2.5rem, var(--activity-max)) !important;
+  max-width: none !important;
+  margin: 0 auto 1rem !important;
 }
 
 body.page-activity .activity-back .btn {
@@ -72,11 +72,17 @@ body.page-activity .activity-back .btn {
   box-shadow: none;
 }
 
+body.page-activity .activity-back .btn::after {
+  content: none !important;
+  margin: 0 !important;
+}
+
 body.page-activity .activity-page > .container,
 body.page-activity .activity-page .page-container {
-  width: 100%;
-  max-width: var(--activity-max) !important;
-  margin: 0 auto !important;
+  width: min(100% - 2.5rem, var(--activity-max)) !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 body.page-activity .activity-page header {
@@ -551,28 +557,43 @@ body.page-activity .activity-grenfell-moral-compass input[type="range"]::-moz-ra
 }
 
 body.page-activity .activity-grenfell-moral-compass .range-labels {
-  display: grid !important;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0.45rem;
+  position: relative !important;
+  display: block !important;
   width: 100% !important;
-  height: auto !important;
-  margin-top: 0.75rem !important;
+  height: 3.8rem !important;
+  margin-top: 0.8rem !important;
+  overflow: visible !important;
+  pointer-events: none;
 }
 
 body.page-activity .activity-grenfell-moral-compass .range-labels span {
-  position: static !important;
-  transform: none !important;
-  width: auto !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 8.5rem !important;
   color: var(--muted) !important;
   font-size: 0.72rem !important;
   font-weight: 700 !important;
   line-height: 1.25 !important;
-  text-align: center;
+  text-align: center !important;
+  transform: translateX(-50%) !important;
 }
 
 body.page-activity .activity-grenfell-moral-compass .range-labels span::before {
-  display: none !important;
+  content: "" !important;
+  display: block !important;
+  width: 2px !important;
+  height: 8px !important;
+  margin: 0 auto 0.4rem !important;
+  border-radius: 999px !important;
+  background: var(--green-800) !important;
+  opacity: 0.5 !important;
 }
+
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-1 { left: 0 !important; }
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-2 { left: 25% !important; }
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-3 { left: 50% !important; }
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-4 { left: 75% !important; }
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-5 { left: 100% !important; }
 
 body.page-activity .activity-grenfell-moral-compass .char-count,
 body.page-activity .activity-grenfell-moral-compass .error-msg,
@@ -773,9 +794,10 @@ body.page-activity .activity-grenfell-timeline-activity .q-text {
 }
 
 @media (max-width: 760px) {
-  body.page-activity .activity-page {
-    padding-left: 0.85rem !important;
-    padding-right: 0.85rem !important;
+  body.page-activity .activity-back,
+  body.page-activity .activity-page > .container,
+  body.page-activity .activity-page .page-container {
+    width: min(100% - 1.35rem, var(--activity-max)) !important;
   }
 
   body.page-activity .activity-page header {
@@ -804,8 +826,13 @@ body.page-activity .activity-grenfell-timeline-activity .q-text {
     grid-template-columns: 1fr !important;
   }
 
+  body.page-activity .activity-grenfell-moral-compass .range-labels {
+    height: 4rem !important;
+  }
+
   body.page-activity .activity-grenfell-moral-compass .range-labels span {
-    font-size: 0.64rem !important;
+    width: 5.8rem !important;
+    font-size: 0.62rem !important;
   }
 }
 
