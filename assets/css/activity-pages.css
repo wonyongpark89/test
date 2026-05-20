@@ -1400,3 +1400,170 @@ body.page-activity .activity-grenfell-moral-compass .range-labels .pos-5::before
     font-size: 0.72rem !important;
   }
 }
+
+/* Moral compass: align slider labels and tick marks using the same geometry as the standalone activity. */
+body.page-activity .activity-grenfell-moral-compass .slider-container {
+  --moral-thumb: 22px;
+  --moral-thumb-half: 11px;
+  position: relative !important;
+  width: min(90%, 760px) !important;
+  max-width: 90% !important;
+  height: auto !important;
+  min-height: 6.1rem !important;
+  margin: 0 auto !important;
+  padding: 0.35rem 0 0 !important;
+  overflow: visible !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .slider-container::before {
+  content: none !important;
+  display: none !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass input[type="range"] {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  display: block !important;
+  position: relative !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 1.8rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  cursor: pointer !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass input[type="range"]::-webkit-slider-runnable-track {
+  width: 100% !important;
+  height: 6px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, #f5d77b 0%, #e8e0c8 50%, #9bc6e0 100%) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  box-sizing: border-box !important;
+  width: var(--moral-thumb) !important;
+  height: var(--moral-thumb) !important;
+  margin-top: -8px !important;
+  border-radius: 50% !important;
+  border: 2px solid #fff !important;
+  background: var(--green-800) !important;
+  box-shadow: 0 2px 9px rgba(3, 27, 18, 0.24) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass input[type="range"]::-moz-range-track {
+  width: 100% !important;
+  height: 6px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, #f5d77b 0%, #e8e0c8 50%, #9bc6e0 100%) !important;
+  border: 0 !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass input[type="range"]::-moz-range-thumb {
+  box-sizing: border-box !important;
+  width: var(--moral-thumb) !important;
+  height: var(--moral-thumb) !important;
+  border-radius: 50% !important;
+  border: 2px solid #fff !important;
+  background: var(--green-800) !important;
+  box-shadow: 0 2px 9px rgba(3, 27, 18, 0.24) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels {
+  position: relative !important;
+  z-index: 1 !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 4.1rem !important;
+  margin: 0.35rem 0 0 !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels span {
+  position: absolute !important;
+  top: 0 !important;
+  width: 6.6rem !important;
+  max-width: 6.6rem !important;
+  transform: translateX(-50%) !important;
+  color: var(--muted) !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  line-height: 1.24 !important;
+  letter-spacing: 0 !important;
+  text-align: center !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels span::before {
+  content: "|" !important;
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 0 0.25rem !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: var(--green-800) !important;
+  font-size: 0.62rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  opacity: 0.48 !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-1 {
+  left: var(--moral-thumb-half) !important;
+  text-align: center !important;
+  transform: translateX(-50%) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-2 {
+  left: calc(25% + (var(--moral-thumb-half) / 2)) !important;
+  text-align: center !important;
+  transform: translateX(-50%) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-3 {
+  left: 50% !important;
+  text-align: center !important;
+  transform: translateX(-50%) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-4 {
+  left: calc(75% - (var(--moral-thumb-half) / 2)) !important;
+  text-align: center !important;
+  transform: translateX(-50%) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-5 {
+  left: calc(100% - var(--moral-thumb-half)) !important;
+  text-align: center !important;
+  transform: translateX(-50%) !important;
+}
+
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-1::before,
+body.page-activity .activity-grenfell-moral-compass .range-labels .pos-5::before {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+@media (max-width: 760px) {
+  body.page-activity .activity-grenfell-moral-compass .slider-container {
+    width: min(88%, 760px) !important;
+    max-width: 88% !important;
+    min-height: 6.9rem !important;
+  }
+
+  body.page-activity .activity-grenfell-moral-compass .range-labels {
+    height: 5rem !important;
+  }
+
+  body.page-activity .activity-grenfell-moral-compass .range-labels span {
+    width: 5.2rem !important;
+    max-width: 5.2rem !important;
+    font-size: 0.7rem !important;
+  }
+}
